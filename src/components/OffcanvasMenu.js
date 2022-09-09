@@ -1,20 +1,16 @@
 import Container from "react-bootstrap/Container";
-
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import classes from "./Menu.module.css";
 import cart from "../assets/icon-cart.svg";
-import hamburger from "../assets/icon-hamburger.svg";
 import logo from "../assets/logo.svg";
 function OffcanvasMenu() {
   return (
     <>
       {["sm"].map((expand) => (
-        <Navbar key={expand} expand={expand} className="mb-3 bg-black">
-          <Container>
+        <Navbar key={expand} expand={expand} className={classes.bgblack}>
+          <Container className="mt-4 mb-4">
             <Navbar.Toggle
               aria-controls={`offcanvasNavbar-expand-${expand}`}
               className="navbar-dark"
@@ -27,7 +23,7 @@ function OffcanvasMenu() {
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="start"
-              className="bg-black"
+              className={classes.bgblack}
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>

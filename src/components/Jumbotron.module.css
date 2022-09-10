@@ -1,3 +1,23 @@
 .JumbotronContainer {
-  border-top: 1px groove white;
+  /* background-size: cover; */
+  width: 100%;
+  /* height: auto;
+  min-height: 500px;
+  border-top: 1px groove white; */
+  /* background-image: url("../assets/image-hero.jpg"); */
+}
+.topLeft {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  color: white;
+  text-align: left;
+}
+
+.jumbotron {
+  background-size: cover;
+  background-image: url("../assets/image-hero.jpg");
+  height: 100%;
+  min-height: 500px;
+  width: 100%;
 }

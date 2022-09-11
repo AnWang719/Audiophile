@@ -1,3 +1,11 @@
 .bgblack {
   background-color: #181818 !important;
 }
+
+.line {
+  border-top: 1px solid white;
+}
+
+.Offcanvas {
+  padding: 30px;
+}

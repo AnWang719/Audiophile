@@ -23,7 +23,7 @@ function OffcanvasMenu() {
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="start"
-              className={classes.bgblack}
+              className={`${classes.bgblack} ${classes.Offcanvas}`}
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
@@ -43,6 +43,7 @@ function OffcanvasMenu() {
           </Container>
         </Navbar>
       ))}
+      <div className={classes.line}></div>
     </>
   );
 }

@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #181818 !important;
+  border-radius: 10px;
 }
 
 .nav-link {
@@ -8,8 +10,20 @@
 .nav-link:hover {
   color: orange !important;
 }
-.bgblack {
-  background-color: #181818 !important;
+.btn-close {
+  filter: invert(1) sepia(1) saturate(8) hue-rotate(175deg);
+}
+
+.navbar-toggler-icon {
+  width: 1.2em !important;
+  height: 1.2em !important;
+}
+
+.navbar-toggler {
+  border: none !important;
+}
+:focus {
+  box-shadow: none !important;
 }
 
 @media (min-width: 1199.98px) {

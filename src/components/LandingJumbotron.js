@@ -9,7 +9,7 @@ function LandingJumbotron() {
           <p className={classes.title}>XX99 MARK II HEADPHONES</p>
           <p className={classes.lead}>
             Experience netural, lifelike audio and exceptional build quality
-            made for the passionate music enthusiast
+            made for the passionate music enthusiast.
           </p>
 
           <a className={`btn btn-lg ${classes.button}`} href="#" role="button">

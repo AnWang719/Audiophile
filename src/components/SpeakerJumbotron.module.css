@@ -1,0 +1,42 @@
+.SpeakerJumbotronContainer {
+  height: 35rem;
+  background-color: #d87d4a;
+  position: relative;
+  border-radius: 5px;
+}
+
+.circleImg {
+  position: absolute;
+  z-index: 0;
+}
+
+.SpeakerJumbotronOverlay {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.SpeakerJumbotronImgContainer {
+  width: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1;
+}
+.SpeakerJumbotronImg {
+  width: 25rem;
+}
+
+.SpeakerJumbotronTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  color: white;
+  width: 40%;
+}
+
+.SpeakerButton {
+  background-color: black;
+}

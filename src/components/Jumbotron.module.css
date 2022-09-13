@@ -49,6 +49,7 @@ span {
   .Jumbotron {
     background-image: url("../assets/image-hero.jpg");
     height: 88vh;
+    background-size: 120%;
     position: relative;
   }
   .text {

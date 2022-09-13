@@ -1,4 +1,9 @@
 .HighlightProducts {
   margin-top: 150px;
-  margin-bottom: 150px;
+  margin-bottom: 0px;
+}
+@media (min-width: 1080px) {
+  .HighlightProducts {
+    margin-bottom: 80px;
+  }
 }

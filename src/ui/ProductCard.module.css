@@ -1,7 +1,7 @@
 .cardContainer {
   width: auto;
   background-color: rgb(230, 227, 227);
-  height: 10rem;
+  height: 11rem;
   margin-bottom: 6rem;
 }
 
@@ -12,7 +12,8 @@
 
 .cardImg {
   position: absolute;
-  width: 12rem;
+  width: 15rem;
+
   top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -20,9 +21,10 @@
 
 .cardBody {
   text-align: center;
+  margin-top: 15px;
 }
 
-p {
+.cardBody p {
   font-weight: 600;
   margin-bottom: 0.5rem !important;
 }

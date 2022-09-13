@@ -1,4 +1,5 @@
 import classes from "./Jumbotron.module.css";
+import ProductButton from "../ui/ProductButton";
 
 function LandingJumbotron() {
   return (
@@ -11,10 +12,7 @@ function LandingJumbotron() {
             Experience netural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-
-          <a className={`btn btn-lg ${classes.button}`} href="#" role="button">
-            SEE PRODUCT
-          </a>
+          <ProductButton className={classes.button}>See Product</ProductButton>
         </div>
       </div>
     </>

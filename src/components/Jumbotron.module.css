@@ -18,6 +18,7 @@
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
+  /* margin: 10px 0; */
 }
 span {
   font-weight: 200;
@@ -32,7 +33,7 @@ span {
 .lead {
   font-weight: 200;
   font-size: 2vh;
-  margin-bottom: 25px;
+  margin-bottom: 1.5rem;
 }
 
 .button {
@@ -40,9 +41,14 @@ span {
   background-color: #d87d4a;
   font-size: 1.5vh;
   color: white;
+  width: 15vh;
+  padding: 10px;
+  text-transform: uppercase;
+  margin: 0 auto;
 }
 .button:hover {
   background-color: #fbaf85;
+  color: white;
 }
 
 @media (min-width: 1080px) {
@@ -58,6 +64,8 @@ span {
     left: 18%;
     text-align: left;
     width: 35%;
-    /* transform: translate(-650px, 10px); */
+  }
+  .button {
+    margin: 0;
   }
 }

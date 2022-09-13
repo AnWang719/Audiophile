@@ -16,15 +16,14 @@ function SpeakerJumbotron() {
         </div>
 
         <div className={classes.SpeakerJumbotronTextContainer}>
-          <h4>ZX9 SPEAKER</h4>
+          <h1>ZX9 SPEAKER</h1>
           <p>
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <ProductButton
-            className={classes.SpeakerButton}
-            children="See Product"
-          />
+          <ProductButton className={classes.SpeakerButton}>
+            See Product
+          </ProductButton>
         </div>
       </div>
     </Container>

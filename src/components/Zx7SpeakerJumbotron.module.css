@@ -1,0 +1,51 @@
+.Jumbotron {
+  background-image: url("../assets/image-speaker-zx7.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 50vh;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.JumbotronText {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 50vh;
+  justify-content: center;
+  position: absolute;
+  /* left: 10%; */
+}
+
+.JumbotronText h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  border: 1px solid black;
+
+  color: black;
+  border-radius: 0;
+  padding: 10px 20px;
+  font-weight: 600;
+}
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+
+@media (min-width: 1080px) {
+  .JumbotronText {
+    width: 50%;
+
+    align-items: flex-start;
+
+    left: 10%;
+  }
+}

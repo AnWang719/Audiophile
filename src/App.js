@@ -5,6 +5,8 @@ import LandingJumbotron from "./components/LandingJumbotron";
 import Container from "react-bootstrap/Container";
 import HighlightProduct from "./components/HightlightProduct";
 import SpeakerJumbotron from "./components/SpeakerJumbotron";
+import Zx7SpeakerJumbotron from "./components/Zx7SpeakerJumbotron";
+import EarphonesJumbotron from "./components/EarphonesJumbotron";
 function App() {
   return (
     <>
@@ -16,6 +18,8 @@ function App() {
       </div>
       <HighlightProduct />
       <SpeakerJumbotron />
+      <Zx7SpeakerJumbotron />
+      <EarphonesJumbotron />
     </>
   );
 }

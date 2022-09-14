@@ -1,0 +1,49 @@
+.EarphonesJumbotron {
+  margin-bottom: 50px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* .EarphonesImg {
+  margin-bottom: 50px;
+} */
+.EarphonesImg img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.EarphonesText {
+  background-color: rgb(230, 227, 227);
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  margin-top: 50px;
+  padding: 0 60px;
+}
+
+.EarphonesText h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.btn {
+  border: 1px solid black;
+  color: black;
+  border-radius: 0;
+  padding: 10px;
+  font-weight: 600;
+  width: 8rem;
+}
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+
+@media (min-width: 808px) {
+  .EarphonesText {
+    margin-top: 0;
+  }
+}

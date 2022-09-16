@@ -1,13 +1,25 @@
 import ImgText from "../ui/ImgText";
 import BestGearImg from "../assets/image-best-gear.jpg";
+import BestGearImgTablet from "../assets/image-best-gear-tablet.jpg";
+import BestGearImgMobile from "../assets/image-best-gear-mobile.jpg";
 import { useState } from "react";
 function BestGear() {
   const [{ btnExist, counterExist, spanExist }] = useState(false);
 
+  const isDesktop = window.matchMedia("(min-width:992px)").matches;
+  const isTablet = window.matchMedia("(min-width:768px)").matches;
+
+  console.log(isDesktop);
+
   return (
     <ImgText
-      src={BestGearImg}
-      span=""
+      src={
+        isDesktop
+          ? BestGearImg
+          : isTablet
+          ? BestGearImgTablet
+          : BestGearImgMobile
+      }
       title1="bring you the"
       textSpan="best"
       title2="audio gear"

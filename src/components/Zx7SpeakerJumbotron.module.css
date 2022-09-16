@@ -23,7 +23,8 @@
 }
 
 .JumbotronText h1 {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
+  font-weight: 550;
   margin-bottom: 20px;
 }
 
@@ -40,7 +41,7 @@
   color: white;
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 768px) {
   .JumbotronText {
     width: 50%;
 

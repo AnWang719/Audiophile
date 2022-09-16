@@ -11,7 +11,6 @@
   position: absolute;
   z-index: 0;
   top: -50px;
-  /* width: 70%; */
 }
 
 .SpeakerJumbotronOverlay {
@@ -45,6 +44,7 @@
 
 h1 {
   font-size: 2.5rem;
+  font-weight: 550;
   margin-bottom: 0;
 }
 
@@ -66,10 +66,10 @@ h1 {
   color: white;
 }
 
-@media (min-width: 1080px) {
-  .SpeakerJumbotronContainer {
+@media (min-width: 768px) {
+  /* .SpeakerJumbotronContainer {
     padding: 80px 0 0;
-  }
+  } */
   .SpeakerJumbotronOverlay {
     flex-direction: row;
     height: 100%;
@@ -78,12 +78,12 @@ h1 {
     width: 25rem;
   }
   .SpeakerJumbotronTextContainer {
-    width: 30%;
+    width: 40%;
     text-align: left;
     align-items: flex-start;
     margin-top: 0;
   }
   .SpeakerButton {
-    width: 8vw;
+    width: 8rem;
   }
 }

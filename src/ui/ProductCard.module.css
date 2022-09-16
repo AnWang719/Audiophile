@@ -45,8 +45,9 @@ a:hover {
   height: 0.6rem;
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 768px) {
   .cardContainer {
     margin: 0 auto;
+    margin-bottom: 0;
   }
 }

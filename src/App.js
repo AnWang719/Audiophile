@@ -9,9 +9,10 @@ import Zx7SpeakerJumbotron from "./components/Zx7SpeakerJumbotron";
 import EarphonesJumbotron from "./components/EarphonesJumbotron";
 import BestGear from "./components/BestGear";
 import Footer from "./components/Footer";
+import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <div className="App">
         <Container>
           <OffcanvasMenu />
@@ -24,7 +25,7 @@ function App() {
       <EarphonesJumbotron />
       <BestGear />
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 

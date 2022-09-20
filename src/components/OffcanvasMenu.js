@@ -5,6 +5,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import classes from "./Menu.module.css";
 import cart from "../assets/icon-cart.svg";
 import logo from "../assets/logo.svg";
+import { NavLink } from "react-router-dom";
 function OffcanvasMenu() {
   return (
     <>
@@ -32,10 +33,22 @@ function OffcanvasMenu() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-start flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">HOME</Nav.Link>
-                  <Nav.Link href="#action2">HEADPHONES</Nav.Link>
-                  <Nav.Link href="#action2">SPEAKERS</Nav.Link>
-                  <Nav.Link href="#action2">EARPHONES</Nav.Link>
+                  {/* <NavLink to="/home">HOME</NavLink>
+                  <NavLink to="/headphones">HEADPHONES</NavLink>
+                  <NavLink to="/headphones">HEADPHONES</NavLink>
+                  <NavLink to="/headphones">HEADPHONES</NavLink> */}
+                  <Nav.Link href="#action1">
+                    <NavLink to="/home">HOME</NavLink>
+                  </Nav.Link>
+                  <Nav.Link href="#action2">
+                    <NavLink to="/headphones">HEADPHONES</NavLink>
+                  </Nav.Link>
+                  <Nav.Link href="#action2">
+                    <NavLink to="/speakers">SPEAKERS</NavLink>
+                  </Nav.Link>
+                  <Nav.Link href="#action2">
+                    <NavLink to="/earphones">EARPHONES</NavLink>
+                  </Nav.Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

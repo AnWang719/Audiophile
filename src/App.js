@@ -8,6 +8,7 @@ import SpeakerJumbotron from "./components/SpeakerJumbotron";
 import Zx7SpeakerJumbotron from "./components/Zx7SpeakerJumbotron";
 import EarphonesJumbotron from "./components/EarphonesJumbotron";
 import BestGear from "./components/BestGear";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
       <Zx7SpeakerJumbotron />
       <EarphonesJumbotron />
       <BestGear />
+      <Footer />
     </>
   );
 }

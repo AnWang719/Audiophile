@@ -36,18 +36,11 @@
   border-radius: 5px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .ImgTextContainer {
     padding-left: 0;
     padding-right: 0;
   }
-  /* .TextContainer {
-    text-align: left;
-
-    width: 80%;
-  } */
-}
-@media (min-width: 992px) {
   .TextContainer {
     text-align: left;
 

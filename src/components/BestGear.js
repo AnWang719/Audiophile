@@ -9,7 +9,7 @@ function BestGear() {
   const isDesktop = window.matchMedia("(min-width:992px)").matches;
   const isTablet = window.matchMedia("(min-width:768px)").matches;
 
-  console.log(isDesktop);
+  // console.log(isDesktop);
 
   return (
     <ImgText

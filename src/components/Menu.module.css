@@ -1,3 +1,10 @@
+.menuOuter {
+  text-align: center;
+  background-color: #181818 !important;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
 .bgblack {
   background-color: #181818 !important;
 }
@@ -8,4 +15,17 @@
 
 .Offcanvas {
   padding: 30px;
+}
+
+.navLink {
+  color: white !important;
+}
+.navLink:hover {
+  color: orange !important;
+}
+
+@media (min-width: 1199.98px) {
+  .navLink {
+    padding-left: 40px !important;
+  }
 }

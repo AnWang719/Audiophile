@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import ProductButton from "../ui/ProductButton";
+import ProductButton from "../../ui/ProductButton";
 import classes from "./Zx7SpeakerJumbotron.module.css";
 
 function Zx7SpeakerJumbotron() {

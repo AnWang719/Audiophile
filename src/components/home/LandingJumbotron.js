@@ -1,5 +1,6 @@
 import classes from "./Jumbotron.module.css";
-import ProductButton from "../ui/ProductButton";
+import ProductButton from "../../ui/ProductButton";
+
 import Container from "react-bootstrap/Container";
 
 function LandingJumbotron() {

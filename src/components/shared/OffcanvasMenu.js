@@ -3,8 +3,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import classes from "./Menu.module.css";
-import cart from "../assets/icon-cart.svg";
-import logo from "../assets/logo.svg";
+import cart from "../../assets/icon-cart.svg";
+import logo from "../../assets/logo.svg";
 import { NavLink } from "react-router-dom";
 function OffcanvasMenu() {
   return (

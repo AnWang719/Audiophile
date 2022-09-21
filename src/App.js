@@ -1,15 +1,12 @@
 import "./App.css";
-import OffcanvasMenu from "./components/OffcanvasMenu";
+import OffcanvasMenu from "./components/shared/OffcanvasMenu";
 import "bootstrap/dist/css/bootstrap.min.css";
-import LandingJumbotron from "./components/LandingJumbotron";
-import HighlightProduct from "./components/HightlightProduct";
-import SpeakerJumbotron from "./components/SpeakerJumbotron";
-import Zx7SpeakerJumbotron from "./components/Zx7SpeakerJumbotron";
-import EarphonesJumbotron from "./components/EarphonesJumbotron";
-import BestGear from "./components/BestGear";
-import Footer from "./components/Footer";
-
+import Home from "./components/home/Home";
+import BestGear from "./components/shared/BestGear";
+import Footer from "./components/shared/Footer";
 import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
+import ProductPage from "./components/productPage/ProductPage";
+
 function App() {
   return (
     <BrowserRouter>
@@ -18,16 +15,12 @@ function App() {
         {/* <Route exact path="/">
           <Navigate to="/home" />
         </Route> */}
-        <Route path="/home" element={<LandingJumbotron />} />
-
-        <Route path="/headphones"></Route>
+        <Route path="/home" element={<Home />} />
+        <Route path="/:id" element={<ProductPage />} />
+        {/* <Route path="/headphones"></Route>
         <Route path="/speakers"></Route>
-        <Route path="/earphones"></Route>
+        <Route path="/earphones"></Route> */}
       </Routes>
-      <HighlightProduct />
-      <SpeakerJumbotron />
-      <Zx7SpeakerJumbotron />
-      <EarphonesJumbotron />
       <BestGear />
       <Footer />
     </BrowserRouter>

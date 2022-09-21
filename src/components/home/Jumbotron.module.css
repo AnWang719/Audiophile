@@ -7,7 +7,7 @@
 }
 
 .Jumbotron {
-  background-image: url("../assets/image-header.jpg");
+  background-image: url("../../assets/image-header.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -59,7 +59,7 @@ span {
 
 @media (min-width: 1080px) {
   .Jumbotron {
-    background-image: url("../assets/image-hero.jpg");
+    background-image: url("../../assets/image-hero.jpg");
     height: 88vh;
     background-size: 120%;
     position: relative;

@@ -1,7 +1,7 @@
-import ImgText from "../ui/ImgText";
-import BestGearImg from "../assets/image-best-gear.jpg";
-import BestGearImgTablet from "../assets/image-best-gear-tablet.jpg";
-import BestGearImgMobile from "../assets/image-best-gear-mobile.jpg";
+import ImgText from "../../ui/ImgText";
+import BestGearImg from "../../assets/image-best-gear.jpg";
+import BestGearImgTablet from "../../assets/image-best-gear-tablet.jpg";
+import BestGearImgMobile from "../../assets/image-best-gear-mobile.jpg";
 import { useState } from "react";
 function BestGear() {
   const [{ btnExist, counterExist, spanExist }] = useState(false);

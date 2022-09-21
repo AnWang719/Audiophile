@@ -1,8 +1,8 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
-import logo from "../assets/logo.svg";
-import facebook from "../assets/icon-facebook.svg";
-import instagram from "../assets/icon-instagram.svg";
-import twitter from "../assets/icon-twitter.svg";
+import logo from "../../assets/logo.svg";
+import facebook from "../../assets/icon-facebook.svg";
+import instagram from "../../assets/icon-instagram.svg";
+import twitter from "../../assets/icon-twitter.svg";
 import classes from "./Footer.module.css";
 
 function Footer() {

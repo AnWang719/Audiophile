@@ -1,10 +1,10 @@
 import Container from "react-bootstrap/Container";
 
 import Image from "react-bootstrap/Image";
-import circles from "../assets/pattern-circles.svg";
-import speaker from "../assets/image-speaker-zx9.png";
+import circles from "../../assets/pattern-circles.svg";
+import speaker from "../../assets/image-speaker-zx9.png";
 import classes from "./SpeakerJumbotron.module.css";
-import ProductButton from "../ui/ProductButton";
+import ProductButton from "../../ui/ProductButton";
 
 function SpeakerJumbotron() {
   return (

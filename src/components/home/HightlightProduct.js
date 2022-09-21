@@ -1,10 +1,10 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import speaker from "../assets/image-speaker.png";
-import headphones from "../assets/image-headphones.png";
-import earphones from "../assets/image-earphones.png";
-import ProductCard from "../ui/ProductCard";
+import speaker from "../../assets/image-speaker.png";
+import headphones from "../../assets/image-headphones.png";
+import earphones from "../../assets/image-earphones.png";
+import ProductCard from "../../ui/ProductCard";
 import classes from "./HighlightProduct.module.css";
 
 function HighlightProduct() {

@@ -1,7 +1,7 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
-import ProductButton from "../ui/ProductButton";
+import ProductButton from "../../ui/ProductButton";
 import classes from "./EarphonesJumbotron.module.css";
-import earphones from "../assets/image-earphones-yx1.jpg";
+import earphones from "../../assets/image-earphones-yx1.jpg";
 
 function EarphonesJumbotron() {
   return (

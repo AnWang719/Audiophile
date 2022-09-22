@@ -2,23 +2,29 @@ import { useParams } from "react-router-dom";
 import classes from "./ProductPage.module.css";
 import Container from "react-bootstrap/Container";
 import ImgText from "../../ui/ImgText";
-
-let data = require("../../data.json");
+import data from "../../data";
+import HighlightProduct from "../home/HightlightProduct";
 
 function ProductPage() {
   let { id } = useParams();
 
   if (!id) return;
 
-  // console.log(data);
+  const selectedProduct = data.filter((dat) => dat.category === id);
 
-  const selectedProduct = data.filter((dat) => dat.category == id);
-
-  // const selectedProduct = data.findIndex(id == data.category);
   console.log(selectedProduct);
 
   const products = selectedProduct.map((product) => (
-    <ImgText src={product.image.desktop} />
+    <ImgText
+      key={product.id}
+      src={product.image.desktop}
+      title1={product.new ? "NEW PRODUCT" : ""}
+      title2={product.name}
+      text={product.description}
+      btnExist={true}
+      btnText="SEE PRODUCT"
+      order1={product.imgOrder === "right" ? "last" : ""}
+    />
   ));
 
   return (
@@ -28,7 +34,10 @@ function ProductPage() {
           <h1>{id}</h1>
         </Container>
       </div>
-      <Container>{products}</Container>
+      <Container>
+        {products}
+        <HighlightProduct />
+      </Container>
     </>
   );
 }

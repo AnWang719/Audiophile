@@ -33,7 +33,7 @@ function OffcanvasMenu() {
                   </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                  <Nav className="justify-content-start flex-grow-1 pe-3">
+                  <Nav className="justify-content-evenly flex-grow-1 pe-3">
                     <NavLink to="/home" className="nav-link">
                       HOME
                     </NavLink>

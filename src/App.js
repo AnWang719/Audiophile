@@ -12,14 +12,9 @@ function App() {
     <BrowserRouter>
       <OffcanvasMenu />
       <Routes>
-        {/* <Route exact path="/">
-          <Navigate to="/home" />
-        </Route> */}
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/:id" element={<ProductPage />} />
-        {/* <Route path="/headphones"></Route>
-        <Route path="/speakers"></Route>
-        <Route path="/earphones"></Route> */}
       </Routes>
       <BestGear />
       <Footer />

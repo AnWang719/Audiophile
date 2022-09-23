@@ -1,0 +1,21 @@
+.btn {
+  border-radius: 0;
+  background-color: #d87d4a;
+  font-size: 0.8rem;
+  color: white;
+  width: 8rem;
+  padding: 10px;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+.btn:hover {
+  background-color: #fbaf85;
+  color: white;
+}
+
+@media (min-width: 1080px) {
+  .btn {
+    margin: 0;
+  }
+}

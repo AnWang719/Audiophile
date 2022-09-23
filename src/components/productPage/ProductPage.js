@@ -11,15 +11,24 @@ function ProductPage() {
   if (!id) return;
 
   const selectedProduct = data.filter((dat) => dat.category === id);
+  const isDesktop = window.matchMedia("(min-width:992px)").matches;
+  const isTablet = window.matchMedia("(min-width:768px)").matches;
 
   console.log(selectedProduct);
 
   const products = selectedProduct.map((product) => (
     <ImgText
       key={product.id}
-      src={product.image.desktop}
-      title1={product.new ? "NEW PRODUCT" : ""}
-      title2={product.name}
+      src={
+        isDesktop
+          ? product.categoryImage.desktop
+          : isTablet
+          ? product.categoryImage.tablet
+          : product.categoryImage.mobile
+      }
+      spanExist={true}
+      span={product.new ? "NEW PRODUCT" : ""}
+      title1={product.name}
       text={product.description}
       btnExist={true}
       btnText="SEE PRODUCT"

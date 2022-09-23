@@ -1,6 +1,8 @@
-function ProductButton({ className, children }) {
+import classes from "./ProductButton.module.css";
+
+function ProductButton({ children }) {
   return (
-    <a className={className} href="#">
+    <a className={classes.btn} href="#">
       {children}
     </a>
   );

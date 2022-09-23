@@ -42,7 +42,7 @@ span {
   margin-bottom: 1.5rem;
 }
 
-.button {
+/* .button {
   border-radius: 0;
   background-color: #d87d4a;
   font-size: 0.8rem;
@@ -55,7 +55,7 @@ span {
 .button:hover {
   background-color: #fbaf85;
   color: white;
-}
+} */
 
 @media (min-width: 1080px) {
   .Jumbotron {
@@ -71,7 +71,7 @@ span {
     text-align: left;
     width: 35%;
   }
-  .button {
+  /* .button {
     margin: 0;
-  }
+  } */
 }

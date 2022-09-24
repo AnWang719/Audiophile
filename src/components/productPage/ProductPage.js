@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import classes from "./ProductPage.module.css";
 import Container from "react-bootstrap/Container";
 import ImgText from "../../ui/ImgText";
@@ -10,13 +10,24 @@ function ProductPage() {
 
   if (!id) return;
 
-  const selectedProduct = data.filter((dat) => dat.category === id);
+  const selectedProducts = data.filter((dat) => dat.category === id);
   const isDesktop = window.matchMedia("(min-width:992px)").matches;
   const isTablet = window.matchMedia("(min-width:768px)").matches;
 
-  console.log(selectedProduct);
+  // console.log(selectedProduct);
 
-  const products = selectedProduct.map((product) => (
+  function showProductDetailHandler(id) {
+    const selectedProduct = selectedProducts.filter((pro) => pro.id === id);
+
+    console.log(selectedProduct);
+  }
+
+  const navigate = useNavigate();
+
+  const ProductDetail = () => {
+    navigate("/productDetail");
+  };
+  const Product = selectedProducts.map((product) => (
     <ImgText
       key={product.id}
       src={
@@ -33,6 +44,8 @@ function ProductPage() {
       btnExist={true}
       btnText="SEE PRODUCT"
       order1={product.imgOrder === "right" ? "last" : ""}
+      btnOnClick={ProductDetail}
+      btnOnClick={showProductDetailHandler.bind(this, product.id)}
     />
   ));
 
@@ -44,7 +57,7 @@ function ProductPage() {
         </Container>
       </div>
       <Container>
-        {products}
+        {Product}
         <HighlightProduct />
       </Container>
     </>

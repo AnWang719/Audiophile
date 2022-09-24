@@ -4,6 +4,7 @@ import facebook from "../../assets/icon-facebook.svg";
 import instagram from "../../assets/icon-instagram.svg";
 import twitter from "../../assets/icon-twitter.svg";
 import classes from "./Footer.module.css";
+import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
@@ -18,10 +19,18 @@ function Footer() {
             <Col lg={6} md={12}>
               <div className={classes.footerRight}>
                 <ul>
-                  <li>HOME</li>
-                  <li>HEADPHONES</li>
-                  <li>SPEAKERS</li>
-                  <li>EARPHONES</li>
+                  <li>
+                    <NavLink to="/home">HOME</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/headphones">HEADPHONES</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/speakers">SPEAKERS</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/earphones">EARPHONES</NavLink>
+                  </li>
                 </ul>
               </div>
             </Col>

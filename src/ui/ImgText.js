@@ -18,6 +18,7 @@ function ImgText({
   order2,
   span1,
   span2,
+  btnOnClick,
 }) {
   return (
     <Container className={classes.ImgTextContainer}>
@@ -42,7 +43,9 @@ function ImgText({
             <p>{price}</p>
             <div>
               {counterExist && <input></input>}
-              {btnExist && <ProductButton>{btnText}</ProductButton>}
+              {btnExist && (
+                <ProductButton onClick={btnOnClick}>{btnText}</ProductButton>
+              )}
             </div>
           </div>
         </Col>

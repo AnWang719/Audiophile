@@ -1,8 +1,8 @@
 import classes from "./ProductButton.module.css";
 
-function ProductButton({ children }) {
+function ProductButton({ onClick, children }) {
   return (
-    <a className={classes.btn} href="#">
+    <a className={classes.btn} onClick={onClick}>
       {children}
     </a>
   );

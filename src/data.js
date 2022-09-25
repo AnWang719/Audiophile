@@ -14,7 +14,7 @@ const data = [
       tablet: require("./assets/product-yx1-earphones/tablet/image-category-page-preview.jpg"),
       desktop: require("./assets/product-yx1-earphones/desktop/image-category-page-preview.jpg"),
     },
-    new: true,
+    New: true,
     price: 599,
     description:
       "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
@@ -104,7 +104,7 @@ const data = [
       tablet: require("./assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg"),
       desktop: require("./assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg"),
     },
-    new: true,
+    New: true,
     price: 2999,
     description:
       "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
@@ -195,7 +195,7 @@ const data = [
       tablet: require("./assets/product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg"),
       desktop: require("./assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg"),
     },
-    new: false,
+    New: false,
     price: 1750,
     description:
       "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
@@ -281,7 +281,7 @@ const data = [
       tablet: require("./assets/product-xx59-headphones/tablet/image-category-page-preview.jpg"),
       desktop: require("./assets/product-xx59-headphones/desktop/image-category-page-preview.jpg"),
     },
-    new: false,
+    New: false,
     price: 899,
     description:
       "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
@@ -367,7 +367,7 @@ const data = [
       tablet: require("./assets/product-zx9-speaker/tablet/image-category-page-preview.jpg"),
       desktop: require("./assets/product-zx9-speaker/desktop/image-category-page-preview.jpg"),
     },
-    new: true,
+    New: true,
     price: 4500,
     description:
       "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
@@ -458,7 +458,7 @@ const data = [
       tablet: require("./assets/product-zx7-speaker/tablet/image-category-page-preview.jpg"),
       desktop: require("./assets/product-zx7-speaker/desktop/image-category-page-preview.jpg"),
     },
-    new: false,
+    New: false,
     price: 3500,
     description:
       "Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",

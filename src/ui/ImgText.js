@@ -12,6 +12,7 @@ function ImgText({
   price,
   btnText,
   btnExist,
+  priceExist,
   counterExist,
   spanExist,
   order1,
@@ -40,7 +41,7 @@ function ImgText({
             </p>
 
             <p className={classes.text}>{text}</p>
-            <p>{price}</p>
+            {priceExist && <p>${price}</p>}
             <div>
               {counterExist && <input></input>}
               {btnExist && (

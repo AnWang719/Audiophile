@@ -1,20 +1,30 @@
+import { useLocation } from "react-router-dom";
+import ImgText from "../../ui/ImgText";
+
 function ProductDetail() {
+  const Location = useLocation();
+
+  const { image, New, name, description, price } = Location.state[0];
+
+  const isDesktop = window.matchMedia("(min-width:992px)").matches;
+  const isTablet = window.matchMedia("(min-width:768px)").matches;
+
   return (
     <>
       <ImgText
-        src={
-          isDesktop
-            ? selectedProduct[0].image.desktop
-            : isTablet
-            ? selectedProduct[0].image.tablet
-            : selectedProduct[0].image.mobile
-        }
+        src={isDesktop ? image.desktop : isTablet ? image.tablet : image.mobile}
         spanExist={true}
-        span={selectedProduct[0].new ? "NEW PRODUCT" : ""}
-        title1={selectedProduct[0].name}
+        span={New ? "NEW PRODUCT" : ""}
+        title1={name}
+        text={description}
+        price={price}
         btnExist={true}
-        btnText="SEE PRODUCT"
+        priceExist={true}
+        counterExist={true}
+        btnText="ADD TO CART"
       />
     </>
   );
 }
+
+export default ProductDetail;

@@ -8,25 +8,19 @@ import HighlightProduct from "../home/HightlightProduct";
 function ProductPage() {
   let { id } = useParams();
 
-  if (!id) return;
+  // if (!id) return;
 
   const selectedProducts = data.filter((dat) => dat.category === id);
   const isDesktop = window.matchMedia("(min-width:992px)").matches;
   const isTablet = window.matchMedia("(min-width:768px)").matches;
 
-  // console.log(selectedProduct);
-
-  function showProductDetailHandler(id) {
-    const selectedProduct = selectedProducts.filter((pro) => pro.id === id);
-
-    console.log(selectedProduct);
-  }
-
   const navigate = useNavigate();
 
-  const ProductDetail = () => {
-    navigate("/productDetail");
-  };
+  function ShowProductDetailHandler(id) {
+    const selectedProduct = selectedProducts.filter((pro) => pro.id === id);
+    navigate("/productDetail", { state: selectedProduct });
+  }
+
   const Product = selectedProducts.map((product) => (
     <ImgText
       key={product.id}
@@ -38,14 +32,15 @@ function ProductPage() {
           : product.categoryImage.mobile
       }
       spanExist={true}
-      span={product.new ? "NEW PRODUCT" : ""}
+      span={product.New ? "NEW PRODUCT" : ""}
       title1={product.name}
       text={product.description}
       btnExist={true}
       btnText="SEE PRODUCT"
       order1={product.imgOrder === "right" ? "last" : ""}
-      btnOnClick={ProductDetail}
-      btnOnClick={showProductDetailHandler.bind(this, product.id)}
+      btnOnClick={() => {
+        ShowProductDetailHandler(product.id);
+      }}
     />
   ));
 

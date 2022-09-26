@@ -41,9 +41,16 @@ function ImgText({
             </p>
 
             <p className={classes.text}>{text}</p>
-            {priceExist && <p>${price}</p>}
-            <div>
-              {counterExist && <input></input>}
+            {priceExist && <p className={classes.price}>${price}</p>}
+            <div className={classes.inputContainer}>
+              {counterExist && (
+                <div className={classes.number}>
+                  <span className={classes.minus}>-</span>
+                  <input type="text" value="0" />
+                  <span className={classes.plus}>+</span>
+                </div>
+              )}
+
               {btnExist && (
                 <ProductButton onClick={btnOnClick}>{btnText}</ProductButton>
               )}

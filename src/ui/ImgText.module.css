@@ -31,6 +31,10 @@
 .text {
   color: grey;
 }
+.price {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
 
 .ImgContainer {
   text-align: center;
@@ -39,6 +43,49 @@
 .ImgContainer img {
   width: 100%;
   border-radius: 5px;
+}
+
+.inputContainer {
+  display: flex;
+  margin: 0 auto;
+}
+
+.number span {
+  cursor: pointer;
+}
+
+.minus,
+.plus {
+  width: 25px;
+  height: 40px;
+  background: lightgrey;
+  font-size: 0.8rem;
+
+  color: grey;
+  padding: 8px;
+
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.plus {
+  margin-right: 15px;
+}
+
+.inputContainer input {
+  height: 40px;
+  width: 50px;
+  background: lightgrey;
+  text-align: center;
+  font-size: 1.2rem;
+  border: 0;
+
+  vertical-align: middle;
+}
+
+input:focus {
+  outline: none;
 }
 
 @media (min-width: 992px) {
@@ -50,5 +97,9 @@
     text-align: left;
 
     width: 80%;
+  }
+
+  .inputContainer {
+    margin: 0;
   }
 }

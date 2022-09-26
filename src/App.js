@@ -10,7 +10,7 @@ import ProductDetail from "./components/productPage/ProductDetail";
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <OffcanvasMenu />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -21,7 +21,7 @@ function App() {
       </Routes>
       <BestGear />
       <Footer />
-    </BrowserRouter>
+    </>
   );
 }
 

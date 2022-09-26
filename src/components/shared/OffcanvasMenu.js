@@ -10,7 +10,7 @@ function OffcanvasMenu() {
   return (
     <div className={classes.menuOuter}>
       <Container>
-        {["sm"].map((expand) => (
+        {["md"].map((expand) => (
           <Navbar key={expand} expand={expand} className={classes.bgblack}>
             <Container className="mt-4 mb-4">
               <Navbar.Toggle

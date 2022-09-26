@@ -62,6 +62,16 @@
   border-radius: 5px;
 }
 
+.cardContainer {
+  margin-bottom: 3rem;
+}
+.CardsSection p:first-child {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
 @media (min-width: 992px) {
   .container {
     padding: 0 !important;

@@ -2,30 +2,49 @@ import { Container, Row, Col, Image } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import ImgText from "../../ui/ImgText";
 import classes from "./ProductDetail.module.css";
+import Card from "../../ui/Card";
+import HighlightProduct from "../home/HightlightProduct";
 
 function ProductDetail() {
   const Location = useLocation();
 
-  const { image, New, name, description, price, features, includes, gallery } =
-    Location.state[0];
+  const {
+    image,
+    New,
+    name,
+    description,
+    price,
+    features,
+    includes,
+    gallery,
+    others,
+  } = Location.state[0];
 
   const isDesktop = window.matchMedia("(min-width:992px)").matches;
   const isTablet = window.matchMedia("(min-width:768px)").matches;
 
-  const listItem = includes.map((item) => (
+  const listItems = includes.map((item) => (
     <div key={item.item} className={classes.listItem}>
       <p> {item.quantity}X</p>
       <p>{item.item}</p>
     </div>
   ));
 
-  //   const Gallery = Object.keys(gallery).map((img)=>(<Row>
-  //   <Col className={classes.galleryLeft}>
-  //     <div><Image src={img.} /></div>
-  //     <div></div>
-  //   </Col>
-  //   <Col className={classes.galleryRight}></Col>
-  // </Row>))
+  const cardItems = others.map((cardItem) => (
+    <Col key={cardItem.name} sm={12} md={4} className={classes.cardContainer}>
+      <Card
+        cardImg={
+          isDesktop
+            ? cardItem.image.desktop
+            : isTablet
+            ? cardItem.image.tablet
+            : cardItem.image.mobile
+        }
+        cardTitle={cardItem.name}
+        cardBtnText={"SEE PRODUCT"}
+      />
+    </Col>
+  ));
 
   return (
     <>
@@ -57,7 +76,7 @@ function ProductDetail() {
             </Col>
             <Col md={12} lg={5} className={classes.includesContainer}>
               <p className={classes.heading}> IN THE BOX</p>
-              {listItem}
+              {listItems}
             </Col>
           </Row>
         </div>
@@ -108,7 +127,12 @@ function ProductDetail() {
             </Col>
           </Row>
         </div>
+        <div className={classes.CardsSection}>
+          <p>YOU MAY ALSO LIKE</p>
+          <Row>{cardItems}</Row>
+        </div>
       </Container>
+      <HighlightProduct />
     </>
   );
 }

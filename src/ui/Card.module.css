@@ -1,0 +1,16 @@
+.cardContainer {
+  text-align: center;
+}
+
+.cardContainer p {
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+
+.cardImg {
+  border-radius: 5px;
+}
+
+.cardBtn {
+  margin: 0 auto;
+}

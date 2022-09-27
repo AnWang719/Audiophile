@@ -12,13 +12,13 @@ function HighlightProduct() {
     <Container className={classes.HighlightProducts}>
       <Row>
         <Col xs={12} md={4}>
-          <ProductCard img={headphones} title="HEADPHONES" />
+          <ProductCard img={headphones} title="HEADPHONES" link="/headphones" />
         </Col>
         <Col xs={12} md={4}>
-          <ProductCard img={speaker} title="SPEAKERS" />
+          <ProductCard img={speaker} title="SPEAKERS" link="/speakers" />
         </Col>
         <Col xs={12} md={4}>
-          <ProductCard img={earphones} title="EARPHONES" />
+          <ProductCard img={earphones} title="EARPHONES" link="/earphones" />
         </Col>
       </Row>
     </Container>

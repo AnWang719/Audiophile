@@ -2,9 +2,9 @@ import classes from "./ProductButton.module.css";
 
 function ProductButton({ className, onClick, children }) {
   return (
-    <a className={`${classes.btn} ${className}`} onClick={onClick}>
+    <button className={`${classes.btn} ${className}`} onClick={onClick}>
       {children}
-    </a>
+    </button>
   );
 }
 

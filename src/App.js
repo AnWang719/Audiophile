@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./components/home/Home";
 import BestGear from "./components/shared/BestGear";
 import Footer from "./components/shared/Footer";
-import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import ProductPage from "./components/productPage/ProductPage";
 import ProductDetail from "./components/productPage/ProductDetail";
 

@@ -1,9 +1,20 @@
 import classes from "./Jumbotron.module.css";
 import ProductButton from "../../ui/ProductButton";
-
+import { useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 
+import data from "../../data";
+
 function LandingJumbotron() {
+  const navigate = useNavigate();
+
+  function showProductDetail() {
+    const selectedProduct = data.filter(
+      (pro) => pro.name === "XX99 Mark II Headphones"
+    );
+    navigate("/productDetail", { state: selectedProduct });
+  }
+
   return (
     <div className={classes.outer}>
       <Container>
@@ -15,7 +26,10 @@ function LandingJumbotron() {
               Experience netural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <ProductButton className={classes.button}>
+            <ProductButton
+              className={classes.button}
+              onClick={showProductDetail}
+            >
               See Product
             </ProductButton>
           </div>

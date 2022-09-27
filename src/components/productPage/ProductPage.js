@@ -18,6 +18,7 @@ function ProductPage() {
 
   function ShowProductDetailHandler(id) {
     const selectedProduct = selectedProducts.filter((pro) => pro.id === id);
+
     navigate("/productDetail", { state: selectedProduct });
   }
 
@@ -38,9 +39,7 @@ function ProductPage() {
       btnExist={true}
       btnText="SEE PRODUCT"
       order1={product.imgOrder === "right" ? "last" : ""}
-      btnOnClick={() => {
-        ShowProductDetailHandler(product.id);
-      }}
+      btnOnClick={ShowProductDetailHandler.bind(this, product.id)}
     />
   ));
 

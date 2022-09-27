@@ -1,10 +1,11 @@
 // import Button from "react-bootstrap/Button";
 // import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
+import { NavLink } from "react-router-dom";
 
 import arrowRight from "../assets/icon-arrow-right.svg";
 import classes from "./ProductCard.module.css";
-function ProductCard({ img, title }) {
+function ProductCard({ img, title, link }) {
   return (
     <>
       <div className={classes.cardContainer}>
@@ -14,10 +15,10 @@ function ProductCard({ img, title }) {
 
         <div className={classes.cardBody}>
           <p>{title}</p>
-          <a href="#">
+          <NavLink to={link}>
             SHOP
             <Image src={arrowRight} className={classes.arrowRight} />
-          </a>
+          </NavLink>
         </div>
       </div>
     </>

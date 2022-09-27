@@ -1,11 +1,19 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ImgText from "../../ui/ImgText";
 import classes from "./ProductDetail.module.css";
 import Card from "../../ui/Card";
 import HighlightProduct from "../home/HightlightProduct";
+import data from "../../data";
 
 function ProductDetail() {
+  const navigate = useNavigate();
+
+  function showProductDetailHandler(slug) {
+    const selectedProduct = data.filter((pro) => pro.slug === slug);
+    navigate("/productDetail", { state: selectedProduct });
+  }
+
   const Location = useLocation();
 
   const {
@@ -42,6 +50,7 @@ function ProductDetail() {
         }
         cardTitle={cardItem.name}
         cardBtnText={"SEE PRODUCT"}
+        onClick={showProductDetailHandler.bind(this, cardItem.slug)}
       />
     </Col>
   ));

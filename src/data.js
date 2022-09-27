@@ -62,7 +62,7 @@ const data = [
     others: [
       {
         slug: "xx99-mark-one-headphones",
-        name: "XX99 Mark I",
+        name: "XX99 Mark I Headphones",
         image: {
           mobile: require("./assets/shared/mobile/image-xx99-mark-one-headphones.jpg"),
           tablet: require("./assets/shared/tablet/image-xx99-mark-one-headphones.jpg"),
@@ -71,7 +71,7 @@ const data = [
       },
       {
         slug: "xx59-headphones",
-        name: "XX59",
+        name: "XX59 Headphones",
         image: {
           mobile: require("./assets/shared/mobile/image-xx59-headphones.jpg"),
           tablet: require("./assets/shared/tablet/image-xx59-headphones.jpg"),
@@ -152,7 +152,7 @@ const data = [
     others: [
       {
         slug: "xx99-mark-one-headphones",
-        name: "XX99 Mark I",
+        name: "XX99 Mark I Headphones",
         image: {
           mobile: require("./assets/shared/mobile/image-xx99-mark-one-headphones.jpg"),
           tablet: require("./assets/shared/tablet/image-xx99-mark-one-headphones.jpg"),
@@ -161,7 +161,7 @@ const data = [
       },
       {
         slug: "xx59-headphones",
-        name: "XX59",
+        name: "XX59 Headphones",
         image: {
           mobile: require("./assets/shared/mobile/image-xx59-headphones.jpg"),
           tablet: require("./assets/shared/tablet/image-xx59-headphones.jpg"),
@@ -239,7 +239,7 @@ const data = [
     others: [
       {
         slug: "xx99-mark-two-headphones",
-        name: "XX99 Mark II",
+        name: "XX99 Mark II Headphones",
         image: {
           mobile: require("./assets/shared/mobile/image-xx99-mark-two-headphones.jpg"),
           tablet: require("./assets/shared/tablet/image-xx99-mark-two-headphones.jpg"),
@@ -248,7 +248,7 @@ const data = [
       },
       {
         slug: "xx59-headphones",
-        name: "XX59",
+        name: "XX59 Headphones",
         image: {
           mobile: require("./assets/shared/mobile/image-xx59-headphones.jpg"),
           tablet: require("./assets/shared/tablet/image-xx59-headphones.jpg"),
@@ -325,7 +325,7 @@ const data = [
     others: [
       {
         slug: "xx99-mark-two-headphones",
-        name: "XX99 Mark II",
+        name: "XX99 Mark II Headphones",
         image: {
           mobile: require("./assets/shared/mobile/image-xx99-mark-two-headphones.jpg"),
           tablet: require("./assets/shared/tablet/image-xx99-mark-two-headphones.jpg"),
@@ -334,7 +334,7 @@ const data = [
       },
       {
         slug: "xx99-mark-one-headphones",
-        name: "XX99 Mark I",
+        name: "XX99 Mark I Headphones",
         image: {
           mobile: require("./assets/shared/mobile/image-xx99-mark-one-headphones.jpg"),
           tablet: require("./assets/shared/tablet/image-xx99-mark-one-headphones.jpg"),
@@ -424,7 +424,7 @@ const data = [
       },
       {
         slug: "xx99-mark-one-headphones",
-        name: "XX99 Mark I",
+        name: "XX99 Mark I Headphones",
         image: {
           mobile: require("./assets/shared/mobile/image-xx99-mark-one-headphones.jpg"),
           tablet: require("./assets/shared/tablet/image-xx99-mark-one-headphones.jpg"),
@@ -433,7 +433,7 @@ const data = [
       },
       {
         slug: "xx59-headphones",
-        name: "XX59",
+        name: "XX59 Headphones",
         image: {
           mobile: require("./assets/shared/mobile/image-xx59-headphones.jpg"),
           tablet: require("./assets/shared/tablet/image-xx59-headphones.jpg"),
@@ -515,7 +515,7 @@ const data = [
       },
       {
         slug: "xx99-mark-one-headphones",
-        name: "XX99 Mark I",
+        name: "XX99 Mark I Headphones",
         image: {
           mobile: require("./assets/shared/mobile/image-xx99-mark-one-headphones.jpg"),
           tablet: require("./assets/shared/tablet/image-xx99-mark-one-headphones.jpg"),
@@ -524,7 +524,7 @@ const data = [
       },
       {
         slug: "xx59-headphones",
-        name: "XX59",
+        name: "XX59 Headphones",
         image: {
           mobile: require("./assets/shared/mobile/image-xx59-headphones.jpg"),
           tablet: require("./assets/shared/tablet/image-xx59-headphones.jpg"),

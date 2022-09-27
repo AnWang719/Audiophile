@@ -1,5 +1,5 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, NavLink } from "react-router-dom";
 import ImgText from "../../ui/ImgText";
 import classes from "./ProductDetail.module.css";
 import Card from "../../ui/Card";
@@ -12,6 +12,7 @@ function ProductDetail() {
   function showProductDetailHandler(slug) {
     const selectedProduct = data.filter((pro) => pro.slug === slug);
     navigate("/productDetail", { state: selectedProduct });
+    window.scrollTo(0, 0);
   }
 
   const Location = useLocation();
@@ -26,6 +27,7 @@ function ProductDetail() {
     includes,
     gallery,
     others,
+    category,
   } = Location.state[0];
 
   const isDesktop = window.matchMedia("(min-width:992px)").matches;
@@ -59,7 +61,9 @@ function ProductDetail() {
     <>
       <Container className={classes.goBackContainer}>
         <div className={classes.goBackDiv}>
-          <a>Go Back</a>
+          <NavLink to={`/${category}`} className={classes.goBackBtn}>
+            Go Back
+          </NavLink>
         </div>
       </Container>
 

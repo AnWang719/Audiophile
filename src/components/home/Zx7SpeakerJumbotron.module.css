@@ -30,7 +30,7 @@
 
 .btn {
   border: 1px solid black;
-
+  width: 9rem;
   color: black;
   border-radius: 0;
   padding: 10px 20px;

@@ -20,6 +20,8 @@ function ImgText({
   span1,
   span2,
   btnOnClick,
+  itemRemoveHandler,
+  itemAddHandler,
 }) {
   return (
     <Container className={classes.ImgTextContainer}>
@@ -45,9 +47,13 @@ function ImgText({
             <div className={classes.inputContainer}>
               {counterExist && (
                 <div className={classes.number}>
-                  <span className={classes.minus}>-</span>
+                  <span className={classes.minus} onClick={itemRemoveHandler}>
+                    -
+                  </span>
                   <input type="text" value="0" />
-                  <span className={classes.plus}>+</span>
+                  <span className={classes.plus} onClick={itemAddHandler}>
+                    +
+                  </span>
                 </div>
               )}
 

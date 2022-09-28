@@ -5,9 +5,12 @@ import classes from "./ProductDetail.module.css";
 import Card from "../../ui/Card";
 import HighlightProduct from "../home/HightlightProduct";
 import data from "../../data";
+import { CartActions } from "../../store/CartSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 function ProductDetail() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   function showProductDetailHandler(slug) {
     const selectedProduct = data.filter((pro) => pro.slug === slug);
@@ -28,10 +31,28 @@ function ProductDetail() {
     gallery,
     others,
     category,
+    id,
   } = Location.state[0];
 
   const isDesktop = window.matchMedia("(min-width:992px)").matches;
   const isTablet = window.matchMedia("(min-width:768px)").matches;
+
+  function itemRemoveHandler() {
+    console.log("remove clicked");
+  }
+
+  function itemAddHandler() {
+    // console.log("add clicked");
+    dispatch(
+      CartActions.addToCart({
+        id,
+        name,
+        image,
+        price,
+        counter: 0,
+      })
+    );
+  }
 
   const listItems = includes.map((item) => (
     <div key={item.item} className={classes.listItem}>
@@ -78,6 +99,8 @@ function ProductDetail() {
         priceExist={true}
         counterExist={true}
         btnText="ADD TO CART"
+        itemRemoveHandler={itemRemoveHandler}
+        itemAddHandler={itemAddHandler}
       />
 
       <Container className={classes.container}>

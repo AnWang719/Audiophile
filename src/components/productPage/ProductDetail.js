@@ -12,13 +12,15 @@ import { useState } from "react";
 function ProductDetail() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  let counter;
 
-  const [quantity, setQuantity] = useState({ counter: 0 });
+  const selectedItem = useSelector((state) => state.items);
+
+  console.log(selectedItem);
   function showProductDetailHandler(slug) {
     const selectedProduct = data.filter((pro) => pro.slug === slug);
     navigate("/productDetail", { state: selectedProduct });
     window.scrollTo(0, 0);
+    setQuantity({ counter: 0 });
   }
 
   const Location = useLocation();
@@ -39,29 +41,31 @@ function ProductDetail() {
 
   const isDesktop = window.matchMedia("(min-width:992px)").matches;
   const isTablet = window.matchMedia("(min-width:768px)").matches;
+  const [quantity, setQuantity] = useState(0);
+  const itemRemoveHandler = () => {
+    setQuantity((prevState) => (prevState ? prevState - 1 : 0));
+  };
 
-  // let quantity = 0;
-  function itemRemoveHandler() {
-    setQuantity((prevState) => ({ counter: prevState.counter - 1 }));
-  }
+  const itemAddHandler = () => {
+    setQuantity((prevState) => prevState + 1);
+  };
 
-  function itemAddHandler() {
-    setQuantity((prevState) => ({ counter: prevState.counter + 1 }));
+  const handleQuantityInput = (e) => {
+    setQuantity(+e.target.value);
+  };
 
-    // quantity++;
+  const addToCartHandler = () => {
+    dispatch(
+      CartActions.addToCart({
+        id,
+        name,
+        image,
+        price,
 
-    // dispatch(
-    //   CartActions.addToCart({
-    //     id,
-    //     name,
-    //     image,
-    //     price,
-    //     quantity,
-    //   })
-    // );
-  }
-
-  // const addToCartHandler() => { };
+        quantity: quantity,
+      })
+    );
+  };
 
   const listItems = includes.map((item) => (
     <div key={item.item} className={classes.listItem}>
@@ -108,10 +112,11 @@ function ProductDetail() {
         priceExist={true}
         counterExist={true}
         btnText="ADD TO CART"
-        // btnOnClick={addToCartHandler}
+        btnOnClick={addToCartHandler}
         itemRemoveHandler={itemRemoveHandler}
         itemAddHandler={itemAddHandler}
-        quantity={quantity.counter}
+        quantity={quantity}
+        handleQuantityInput={handleQuantityInput}
       />
 
       <Container className={classes.container}>

@@ -24,6 +24,7 @@ function ImgText({
   itemRemoveHandler,
   itemAddHandler,
   quantity,
+  handleQuantityInput,
 }) {
   return (
     <Container className={classes.ImgTextContainer}>
@@ -52,7 +53,11 @@ function ImgText({
                   <span className={classes.minus} onClick={itemRemoveHandler}>
                     -
                   </span>
-                  <input type="text" value={quantity} />
+                  <input
+                    type="text"
+                    value={quantity}
+                    onChange={handleQuantityInput}
+                  />
                   <span className={classes.plus} onClick={itemAddHandler}>
                     +
                   </span>

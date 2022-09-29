@@ -7,11 +7,14 @@ import HighlightProduct from "../home/HightlightProduct";
 import data from "../../data";
 import { CartActions } from "../../store/CartSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 
 function ProductDetail() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  let counter;
 
+  const [quantity, setQuantity] = useState({ counter: 0 });
   function showProductDetailHandler(slug) {
     const selectedProduct = data.filter((pro) => pro.slug === slug);
     navigate("/productDetail", { state: selectedProduct });
@@ -37,22 +40,28 @@ function ProductDetail() {
   const isDesktop = window.matchMedia("(min-width:992px)").matches;
   const isTablet = window.matchMedia("(min-width:768px)").matches;
 
+  // let quantity = 0;
   function itemRemoveHandler() {
-    console.log("remove clicked");
+    setQuantity((prevState) => ({ counter: prevState.counter - 1 }));
   }
 
   function itemAddHandler() {
-    // console.log("add clicked");
-    dispatch(
-      CartActions.addToCart({
-        id,
-        name,
-        image,
-        price,
-        counter: 0,
-      })
-    );
+    setQuantity((prevState) => ({ counter: prevState.counter + 1 }));
+
+    // quantity++;
+
+    // dispatch(
+    //   CartActions.addToCart({
+    //     id,
+    //     name,
+    //     image,
+    //     price,
+    //     quantity,
+    //   })
+    // );
   }
+
+  // const addToCartHandler() => { };
 
   const listItems = includes.map((item) => (
     <div key={item.item} className={classes.listItem}>
@@ -99,8 +108,10 @@ function ProductDetail() {
         priceExist={true}
         counterExist={true}
         btnText="ADD TO CART"
+        // btnOnClick={addToCartHandler}
         itemRemoveHandler={itemRemoveHandler}
         itemAddHandler={itemAddHandler}
+        quantity={quantity.counter}
       />
 
       <Container className={classes.container}>

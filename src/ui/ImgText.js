@@ -1,6 +1,7 @@
 import ProductButton from "./ProductButton";
 import { Container, Image, Row, Col } from "react-bootstrap";
 import classes from "./ImgText.module.css";
+import { useSelector } from "react-redux";
 
 function ImgText({
   src,
@@ -22,6 +23,7 @@ function ImgText({
   btnOnClick,
   itemRemoveHandler,
   itemAddHandler,
+  quantity,
 }) {
   return (
     <Container className={classes.ImgTextContainer}>
@@ -50,7 +52,7 @@ function ImgText({
                   <span className={classes.minus} onClick={itemRemoveHandler}>
                     -
                   </span>
-                  <input type="text" value="0" />
+                  <input type="text" value={quantity} />
                   <span className={classes.plus} onClick={itemAddHandler}>
                     +
                   </span>

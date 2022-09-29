@@ -12,17 +12,11 @@ const CartSlice = createSlice({
   initialState,
   reducers: {
     addToCart(state, action) {
-      //   console.log(action.payload);
-      state.items.push({
-        value: action.payload,
-        // counter: 0,
-      });
+      state.items.push(action.payload);
 
-      updatedCounter = action.payload.counter + 1;
+      state.totalAmount = action.payload.price * action.payload.quantity;
 
-      state.totalAmount = action.payload.price * updatedCounter;
-      action.payload.counter = updatedCounter;
-      console.log(action.payload);
+      //   console.log(action.payload, state.totalAmount);
     },
 
     removeFromCart(state, action) {

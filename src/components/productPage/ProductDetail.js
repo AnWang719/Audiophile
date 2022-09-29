@@ -20,7 +20,7 @@ function ProductDetail() {
     const selectedProduct = data.filter((pro) => pro.slug === slug);
     navigate("/productDetail", { state: selectedProduct });
     window.scrollTo(0, 0);
-    setQuantity({ counter: 0 });
+    setQuantity(0);
   }
 
   const Location = useLocation();

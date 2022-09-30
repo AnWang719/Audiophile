@@ -14,8 +14,9 @@ function ProductDetail() {
   const dispatch = useDispatch();
 
   const selectedItem = useSelector((state) => state.items);
+  const totalAmount = useSelector((state) => state.totalAmount);
 
-  console.log(selectedItem);
+  console.log(selectedItem, totalAmount);
   function showProductDetailHandler(slug) {
     const selectedProduct = data.filter((pro) => pro.slug === slug);
     navigate("/productDetail", { state: selectedProduct });
@@ -61,7 +62,6 @@ function ProductDetail() {
         name,
         image,
         price,
-
         quantity: quantity,
       })
     );

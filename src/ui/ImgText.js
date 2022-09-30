@@ -1,8 +1,6 @@
 import ProductButton from "./ProductButton";
 import { Container, Image, Row, Col } from "react-bootstrap";
 import classes from "./ImgText.module.css";
-import { useSelector } from "react-redux";
-
 function ImgText({
   src,
   span,

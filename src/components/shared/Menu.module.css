@@ -24,6 +24,25 @@
   color: orange !important;
 }
 
+.cart {
+  position: relative;
+}
+
+.cart span {
+  background-color: #d87d4a;
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  position: absolute;
+  color: white;
+  font-size: 1rem;
+  top: -5px;
+  left: 10px;
+  padding-left: 7px;
+  padding-bottom: 23px;
+}
+
 /* @media (min-width: 1199.98px) {
   .navLink {
     padding-left: 40px !important;

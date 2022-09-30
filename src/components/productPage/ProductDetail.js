@@ -67,6 +67,8 @@ function ProductDetail() {
     );
   };
 
+  console.log(quantity);
+
   const listItems = includes.map((item) => (
     <div key={item.item} className={classes.listItem}>
       <p> {item.quantity}X</p>

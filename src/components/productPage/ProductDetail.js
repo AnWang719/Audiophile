@@ -16,7 +16,7 @@ function ProductDetail() {
   const selectedItem = useSelector((state) => state.items);
   const totalAmount = useSelector((state) => state.totalAmount);
 
-  console.log(selectedItem, totalAmount);
+  // console.log(selectedItem, totalAmount);
   function showProductDetailHandler(slug) {
     const selectedProduct = data.filter((pro) => pro.slug === slug);
     navigate("/productDetail", { state: selectedProduct });
@@ -42,9 +42,11 @@ function ProductDetail() {
 
   const isDesktop = window.matchMedia("(min-width:992px)").matches;
   const isTablet = window.matchMedia("(min-width:768px)").matches;
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const itemRemoveHandler = () => {
-    setQuantity((prevState) => (prevState ? prevState - 1 : 0));
+    setQuantity((prevState) =>
+      prevState && prevState !== 1 ? prevState - 1 : 1
+    );
   };
 
   const itemAddHandler = () => {
@@ -67,7 +69,7 @@ function ProductDetail() {
     );
   };
 
-  console.log(quantity);
+  // console.log(quantity);
 
   const listItems = includes.map((item) => (
     <div key={item.item} className={classes.listItem}>

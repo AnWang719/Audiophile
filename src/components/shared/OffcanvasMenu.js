@@ -7,10 +7,20 @@ import cart from "../../assets/icon-cart.svg";
 import logo from "../../assets/logo.svg";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
 
 function OffcanvasMenu() {
   //extracting quantity values from state
+
+  const [cartHasItem, setCartHasItem] = useState(false);
   const CartItems = useSelector((state) => state.items);
+  console.log(CartItems);
+
+  useEffect(() => {
+    if (CartItems.length >= 1) {
+      setCartHasItem(true);
+    }
+  }, [CartItems]);
 
   function extractValue(arr, prop) {
     let extractedValue = arr.map((item) => item[prop]);
@@ -68,7 +78,7 @@ function OffcanvasMenu() {
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
               <div className={classes.cart}>
-                <span>{totalQuantity}</span>
+                {cartHasItem && <span>{totalQuantity}</span>}
                 <img src={cart} alt="cart" />
               </div>
             </Container>

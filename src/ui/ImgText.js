@@ -52,7 +52,8 @@ function ImgText({
                     -
                   </span>
                   <input
-                    type="text"
+                    type="number"
+                    min={1}
                     value={quantity}
                     onChange={handleQuantityInput}
                   />

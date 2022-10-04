@@ -29,3 +29,13 @@
     padding: 0 !important;
   }
 }
+
+.modal-90w {
+  margin-top: 18vh !important;
+}
+
+@media (min-width: 996px) {
+  .modal-90w {
+    margin-left: 70vw !important;
+  }
+}

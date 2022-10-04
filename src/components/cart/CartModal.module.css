@@ -1,0 +1,20 @@
+.cart {
+  position: relative;
+}
+
+.cart span {
+  background-color: #d87d4a;
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  position: absolute;
+  color: white;
+  font-size: 0.9rem;
+  top: -5px;
+  left: 10px;
+  padding-top: 1px;
+  padding-left: 1px;
+  letter-spacing: normal;
+  cursor: pointer;
+}

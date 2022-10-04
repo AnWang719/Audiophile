@@ -3,38 +3,11 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import classes from "./Menu.module.css";
-import cart from "../../assets/icon-cart.svg";
 import logo from "../../assets/logo.svg";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+import CartModal from "../cart/CartModal";
 
 function OffcanvasMenu() {
-  //extracting quantity values from state
-
-  const [cartHasItem, setCartHasItem] = useState(false);
-  const CartItems = useSelector((state) => state.items);
-  console.log(CartItems);
-
-  useEffect(() => {
-    if (CartItems.length >= 1) {
-      setCartHasItem(true);
-    }
-  }, [CartItems]);
-
-  function extractValue(arr, prop) {
-    let extractedValue = arr.map((item) => item[prop]);
-
-    return extractedValue;
-  }
-
-  const result = extractValue(CartItems, "quantity");
-  const totalQuantity = result.reduce((acc, value) => {
-    return acc + value;
-  }, 0);
-
-  console.log(totalQuantity);
-
   return (
     <div className={classes.menuOuter}>
       <Container>
@@ -77,10 +50,8 @@ function OffcanvasMenu() {
                   </Nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
-              <div className={classes.cart}>
-                {cartHasItem && <span>{totalQuantity}</span>}
-                <img src={cart} alt="cart" />
-              </div>
+
+              <CartModal />
             </Container>
           </Navbar>
         ))}

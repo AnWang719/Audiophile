@@ -13,15 +13,11 @@ function ProductDetail() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const selectedItem = useSelector((state) => state.items);
-  const totalAmount = useSelector((state) => state.totalAmount);
-
-  // console.log(selectedItem, totalAmount);
   function showProductDetailHandler(slug) {
     const selectedProduct = data.filter((pro) => pro.slug === slug);
     navigate("/productDetail", { state: selectedProduct });
     window.scrollTo(0, 0);
-    setQuantity(0);
+    setQuantity(1);
   }
 
   const Location = useLocation();
@@ -68,8 +64,6 @@ function ProductDetail() {
       })
     );
   };
-
-  // console.log(quantity);
 
   const listItems = includes.map((item) => (
     <div key={item.item} className={classes.listItem}>

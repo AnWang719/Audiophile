@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Button from "react-bootstrap/Button";
+import { Container, Row, Col, Image } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import cart from "../../assets/icon-cart.svg";
 import { useSelector } from "react-redux";
@@ -7,9 +7,23 @@ import classes from "./CartModal.module.css";
 
 function CartModal() {
   const [show, setShow] = useState(false);
-
   const [cartHasItem, setCartHasItem] = useState(false);
   const CartItems = useSelector((state) => state.items);
+
+  const Cart = CartItems.map((item) => (
+    <div key={item.id} className={classes.cartItems}>
+      <div className={classes.cartItemsLeft}>
+        <Image src={item.image.desktop} fluid className={classes.image} />
+        <div>
+          <p>{item.name}</p>
+          <p>${item.price}</p>
+        </div>
+      </div>
+      <div className={classes.cartItemsRight}>
+        <input></input>
+      </div>
+    </div>
+  ));
 
   useEffect(() => {
     if (CartItems.length >= 1) {
@@ -19,7 +33,6 @@ function CartModal() {
 
   function extractValue(arr, prop) {
     let extractedValue = arr.map((item) => item[prop]);
-
     return extractedValue;
   }
 
@@ -34,11 +47,12 @@ function CartModal() {
         {cartHasItem && <span>{totalQuantity}</span>}
         <img src={cart} alt="cart" />
       </div>
+
       <Modal
         size="sm"
         show={show}
         onHide={() => setShow(false)}
-        dialogClassName="modal-90w"
+        dialogClassName="modal-90w container "
         aria-labelledby="example-custom-modal-styling-title"
       >
         {/* <Modal.Header closeButton>
@@ -46,16 +60,20 @@ function CartModal() {
             Custom Modal Styling
           </Modal.Title>
         </Modal.Header> */}
+
         <Modal.Body>
-          <p>
-            Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae unde
-            commodi aspernatur enim, consectetur. Cumque deleniti temporibus
-            ipsam atque a dolores quisquam quisquam adipisci possimus
-            laboriosam. Quibusdam facilis doloribus debitis! Sit quasi quod
-            accusamus eos quod. Ab quos consequuntur eaque quo rem! Mollitia
-            reiciendis porro quo magni incidunt dolore amet atque facilis ipsum
-            deleniti rem!
-          </p>
+          <Container>
+            <div className={classes.modalHeader}>
+              <div className={classes.modalHeaderLeft}>
+                <p> CART({CartItems.length})</p>
+              </div>
+              <div className={classes.modalHeaderRight}>
+                <p> Remove all</p>
+              </div>
+            </div>
+
+            {Cart}
+          </Container>
         </Modal.Body>
       </Modal>
     </>

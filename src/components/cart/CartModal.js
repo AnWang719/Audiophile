@@ -2,13 +2,38 @@ import React, { useState, useEffect } from "react";
 import { Container, Image } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import cart from "../../assets/icon-cart.svg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import classes from "./CartModal.module.css";
 import Input from "../../ui/Input";
+import ProductButton from "../../ui/ProductButton";
+import { CartActions } from "../../store/CartSlice";
+
 function CartModal() {
   const [show, setShow] = useState(false);
   const [cartHasItem, setCartHasItem] = useState(false);
   const CartItems = useSelector((state) => state.items);
+  const TotalAmount = useSelector((state) => state.totalAmount);
+  const dispatch = useDispatch();
+  const handleQuantityInput = () => {};
+
+  const itemAddHandler = (id) => {
+    const existingItems = CartItems.filter((item) => item.id === id);
+
+    const { price, quantity, name, image } = existingItems[0];
+
+    dispatch(
+      CartActions.addToCart({
+        name,
+        image,
+        price,
+        quantity: quantity + 1,
+      })
+    );
+    console.log(existingItems);
+    console.log(price, quantity);
+  };
+
+  const itemRemoveHandler = () => {};
 
   const Cart = CartItems.map((item) => (
     <div key={item.id} className={classes.cartItems}>
@@ -20,7 +45,13 @@ function CartModal() {
         </div>
       </div>
       <div className={classes.cartItemsRight}>
-        <Input className={classes.addBtn} quantity={item.quantity} />
+        <Input
+          className={classes.addBtn}
+          quantity={item.quantity}
+          handleQuantityInput={handleQuantityInput}
+          itemAddHandler={itemAddHandler.bind(this, item.id)}
+          itemRemoveHandler={itemRemoveHandler}
+        />
       </div>
     </div>
   ));
@@ -55,31 +86,34 @@ function CartModal() {
         dialogClassName="modal-90w container "
         aria-labelledby="example-custom-modal-styling-title"
       >
-        {/* <Modal.Header closeButton>
-          <Modal.Title id="example-custom-modal-styling-title">
-            Custom Modal Styling
-          </Modal.Title>
-        </Modal.Header> */}
-
         <Modal.Body>
           <Container>
-            <div className={classes.modalHeader}>
-              <div className={classes.modalHeaderLeft}>
-                <p> CART({CartItems.length})</p>
-              </div>
-              <div className={classes.modalHeaderRight}>
-                <p> Remove all</p>
-              </div>
-            </div>
+            {CartItems.length >= 1 ? (
+              <>
+                <div className={classes.modalHeader}>
+                  <p> CART({CartItems.length})</p>
+                  <p> Remove all</p>
+                </div>
+                {Cart}
+                <div className={classes.amount}>
+                  <p>TOTAL</p>
+                  <p>${TotalAmount}</p>
+                </div>
 
-            {Cart}
+                <ProductButton className={classes.checkoutBtn}>
+                  CHECKOUT
+                </ProductButton>
+              </>
+            ) : (
+              <p className={classes.noItemsText}>
+                Currently no items in your cart
+              </p>
+            )}
           </Container>
         </Modal.Body>
       </Modal>
     </>
   );
 }
-
-// render(<CartModal />);
 
 export default CartModal;

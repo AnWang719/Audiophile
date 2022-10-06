@@ -1,0 +1,50 @@
+.number {
+  display: flex;
+}
+
+.number span {
+  cursor: pointer;
+}
+
+.minus,
+.plus {
+  width: 25px;
+  height: 40px;
+  background: lightgrey;
+  font-size: 0.8rem;
+
+  color: grey;
+  padding: 8px;
+
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.plus {
+  margin-right: 15px;
+}
+
+input {
+  height: 40px;
+  width: 50px;
+  background: lightgrey;
+  text-align: center;
+  font-size: 1.2rem;
+  border: 0;
+  vertical-align: middle;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input:focus {
+  outline: none;
+}

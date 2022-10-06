@@ -41,6 +41,8 @@
 
 .cartItemsRight {
   width: 30%;
+  align-content: center;
+  display: grid;
 }
 .cartItemsRight input {
   width: 100%;
@@ -58,6 +60,20 @@
 .modalHeaderLeft {
   text-align: left;
   width: 70%;
+}
+
+.modalHeaderRight {
+  display: flex;
+  margin: 0 auto;
+}
+
+.addBtn {
+  margin-right: 0 !important;
+}
+
+.cartItemsLeft div {
+  align-content: center;
+  display: grid;
 }
 
 .modalHeaderLeft p {

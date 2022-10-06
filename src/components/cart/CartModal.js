@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Image } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import cart from "../../assets/icon-cart.svg";
 import { useSelector } from "react-redux";
 import classes from "./CartModal.module.css";
-
+import Input from "../../ui/Input";
 function CartModal() {
   const [show, setShow] = useState(false);
   const [cartHasItem, setCartHasItem] = useState(false);
@@ -20,7 +20,7 @@ function CartModal() {
         </div>
       </div>
       <div className={classes.cartItemsRight}>
-        <input></input>
+        <Input className={classes.addBtn} quantity={item.quantity} />
       </div>
     </div>
   ));

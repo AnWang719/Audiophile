@@ -1,5 +1,6 @@
 import ProductButton from "./ProductButton";
 import { Container, Image, Row, Col } from "react-bootstrap";
+import Input from "./Input";
 import classes from "./ImgText.module.css";
 function ImgText({
   src,
@@ -46,22 +47,33 @@ function ImgText({
             <p className={classes.text}>{text}</p>
             {priceExist && <p className={classes.price}>${price}</p>}
             <div className={classes.inputContainer}>
-              {counterExist && (
-                <div className={classes.number}>
-                  <span className={classes.minus} onClick={itemRemoveHandler}>
-                    -
-                  </span>
-                  <input
-                    type="number"
-                    min={1}
-                    value={quantity}
-                    onChange={handleQuantityInput}
+              {
+                counterExist && (
+                  <Input
+                    quantity={quantity}
+                    handleQuantityInput={handleQuantityInput}
+                    itemAddHandler={itemAddHandler}
+                    itemRemoveHandler={itemRemoveHandler}
                   />
-                  <span className={classes.plus} onClick={itemAddHandler}>
-                    +
-                  </span>
-                </div>
-              )}
+                )
+
+                //   (
+                //   <div className={classes.number}>
+                //     <span className={classes.minus} onClick={itemRemoveHandler}>
+                //       -
+                //     </span>
+                //     <input
+                //       type="number"
+                //       min={1}
+                //       value={quantity}
+                //       onChange={handleQuantityInput}
+                //     />
+                //     <span className={classes.plus} onClick={itemAddHandler}>
+                //       +
+                //     </span>
+                //   </div>
+                // )
+              }
 
               {btnExist && (
                 <ProductButton onClick={btnOnClick}>{btnText}</ProductButton>

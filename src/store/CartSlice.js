@@ -11,6 +11,7 @@ const CartSlice = createSlice({
   initialState,
   reducers: {
     addToCart(state, action) {
+      console.log(action.payload);
       const updatedTotalAmount =
         state.totalAmount + action.payload.price * action.payload.quantity;
 
@@ -32,23 +33,47 @@ const CartSlice = createSlice({
     },
 
     removeFromCart(state, action) {
-      const updatedTotalAmount =
-        state.totalAmount - action.payload.price * action.payload.quantity;
       const existingCartItemIndex = state.items.findIndex(
-        (item) => item.id === action.payload.id
+        (item) => item.id === action.payload
       );
-
-      const existingCartItem = state.items[existingCartItemIndex];
-
-      if (existingCartItem) {
-        state.items[existingCartItemIndex] = {
-          ...existingCartItem,
-          quantity: existingCartItem.quantity - action.payload.quantity,
-        };
+      const existingItem = state.items[existingCartItemIndex];
+      const updatedTotalAmount = state.totalAmount - existingItem.price;
+      let updatedItems;
+      if (existingItem.quantity === 1) {
+        updatedItems = state.items.filter((item) => item.id !== action.payload);
       } else {
-        state.items = state.items.concat(action.payload);
+        const updatedItem = {
+          ...existingItem,
+          quantity: existingItem.quantity - 1,
+        };
+        updatedItems = [...state.items];
+        updatedItems[existingCartItemIndex] = updatedItem;
       }
+
+      state.items = updatedItems;
       state.totalAmount = updatedTotalAmount;
+      // return {
+      //   items: updatedItems,
+      //   totalAmount: updatedTotalAmount
+      // };
+
+      // const updatedTotalAmount =
+      //   state.totalAmount - action.payload.price * action.payload.quantity;
+      // const existingCartItemIndex = state.items.findIndex(
+      //   (item) => item.id === action.payload.id
+      // );
+
+      // const existingCartItem = state.items[existingCartItemIndex];
+
+      // if (existingCartItem) {
+      //   state.items[existingCartItemIndex] = {
+      //     ...existingCartItem,
+      //     quantity: existingCartItem.quantity - action.payload.quantity,
+      //   };
+      // } else {
+      //   state.items = state.items.concat(action.payload);
+      // }
+      // state.totalAmount = updatedTotalAmount;
     },
   },
 });

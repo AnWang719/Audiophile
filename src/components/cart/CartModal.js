@@ -16,24 +16,13 @@ function CartModal() {
   const dispatch = useDispatch();
   const handleQuantityInput = () => {};
 
-  const itemAddHandler = (id) => {
-    const existingItems = CartItems.filter((item) => item.id === id);
-
-    const { price, quantity, name, image } = existingItems[0];
-
-    dispatch(
-      CartActions.addToCart({
-        name,
-        image,
-        price,
-        quantity: quantity + 1,
-      })
-    );
-    console.log(existingItems);
-    console.log(price, quantity);
+  const itemAddHandler = (item) => {
+    dispatch(CartActions.addToCart(item));
   };
 
-  const itemRemoveHandler = () => {};
+  const itemRemoveHandler = (id) => {
+    dispatch(CartActions.removeFromCart(id));
+  };
 
   const Cart = CartItems.map((item) => (
     <div key={item.id} className={classes.cartItems}>
@@ -49,8 +38,8 @@ function CartModal() {
           className={classes.addBtn}
           quantity={item.quantity}
           handleQuantityInput={handleQuantityInput}
-          itemAddHandler={itemAddHandler.bind(this, item.id)}
-          itemRemoveHandler={itemRemoveHandler}
+          itemAddHandler={itemAddHandler.bind(this, item)}
+          itemRemoveHandler={itemRemoveHandler.bind(this, item.id)}
         />
       </div>
     </div>

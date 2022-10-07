@@ -11,7 +11,9 @@ import { CartActions } from "../../store/CartSlice";
 function CartModal() {
   const [show, setShow] = useState(false);
   const [cartHasItem, setCartHasItem] = useState(false);
-  const CartItems = useSelector((state) => state.items);
+  let CartItems = useSelector((state) => state.items);
+
+  console.log(CartItems);
   const TotalAmount = useSelector((state) => state.totalAmount);
   const dispatch = useDispatch();
   const handleQuantityInput = () => {};
@@ -22,6 +24,10 @@ function CartModal() {
 
   const itemRemoveHandler = (id) => {
     dispatch(CartActions.removeFromCart(id));
+  };
+
+  const removeAllHandler = () => {
+    dispatch(CartActions.emptyCart());
   };
 
   const Cart = CartItems.map((item) => (
@@ -81,7 +87,7 @@ function CartModal() {
               <>
                 <div className={classes.modalHeader}>
                   <p> CART({CartItems.length})</p>
-                  <p> Remove all</p>
+                  <p onClick={removeAllHandler}> Remove all</p>
                 </div>
                 {Cart}
                 <div className={classes.amount}>

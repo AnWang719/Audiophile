@@ -85,6 +85,10 @@
 .modalHeader p:nth-child(2) {
   color: grey;
 }
+.modalHeader p:nth-child(2):hover {
+  cursor: pointer;
+  color: #d87d4a;
+}
 
 .addBtn {
   margin-right: 0 !important;

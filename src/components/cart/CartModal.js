@@ -13,7 +13,6 @@ function CartModal() {
   const [cartHasItem, setCartHasItem] = useState(false);
   let CartItems = useSelector((state) => state.items);
 
-  console.log(CartItems);
   const TotalAmount = useSelector((state) => state.totalAmount);
   const dispatch = useDispatch();
   const handleQuantityInput = () => {};

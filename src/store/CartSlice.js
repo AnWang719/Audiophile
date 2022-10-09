@@ -5,7 +5,6 @@ const initialState = {
   totalAmount: 0,
 };
 
-let updatedCounter;
 const CartSlice = createSlice({
   name: "cart",
   initialState,
@@ -16,11 +15,8 @@ const CartSlice = createSlice({
       );
 
       const existingCartItem = state.items[existingCartItemIndex];
-      // console.log(existingCartItem.quantity);
 
       let updatedTotalAmount;
-      // const updatedTotalAmount =
-      //   state.totalAmount + action.payload.price * action.payload.quantity;
 
       if (existingCartItem) {
         state.items[existingCartItemIndex] = {
@@ -43,7 +39,7 @@ const CartSlice = createSlice({
       );
       const existingItem = state.items[existingCartItemIndex];
       const updatedTotalAmount = state.totalAmount - existingItem.price;
-      // let updatedItems;
+
       if (existingItem.quantity === 1) {
         state.items = state.items.filter((item) => item.id !== action.payload);
       } else {
@@ -57,28 +53,6 @@ const CartSlice = createSlice({
 
       // state.items = updatedItems;
       state.totalAmount = updatedTotalAmount;
-      // return {
-      //   items: updatedItems,
-      //   totalAmount: updatedTotalAmount
-      // };
-
-      // const updatedTotalAmount =
-      //   state.totalAmount - action.payload.price * action.payload.quantity;
-      // const existingCartItemIndex = state.items.findIndex(
-      //   (item) => item.id === action.payload.id
-      // );
-
-      // const existingCartItem = state.items[existingCartItemIndex];
-
-      // if (existingCartItem) {
-      //   state.items[existingCartItemIndex] = {
-      //     ...existingCartItem,
-      //     quantity: existingCartItem.quantity - action.payload.quantity,
-      //   };
-      // } else {
-      //   state.items = state.items.concat(action.payload);
-      // }
-      // state.totalAmount = updatedTotalAmount;
     },
 
     emptyCart(state, action) {

@@ -6,8 +6,9 @@ import Card from "../../ui/Card";
 import HighlightProduct from "../home/HightlightProduct";
 import data from "../../data";
 import { CartActions } from "../../store/CartSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
+import GoBack from "../../ui/GoBack";
 
 function ProductDetail() {
   const navigate = useNavigate();
@@ -91,13 +92,15 @@ function ProductDetail() {
 
   return (
     <>
-      <Container className={classes.goBackContainer}>
+      {/* <Container className={classes.goBackContainer}>
         <div className={classes.goBackDiv}>
           <NavLink to={`/${category}`} className={classes.goBackBtn}>
             Go Back
           </NavLink>
         </div>
-      </Container>
+      </Container> */}
+
+      <GoBack goBackTo={category} />
 
       <ImgText
         src={isDesktop ? image.desktop : isTablet ? image.tablet : image.mobile}

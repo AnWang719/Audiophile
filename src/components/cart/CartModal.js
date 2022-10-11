@@ -18,7 +18,7 @@ function CartModal() {
   const handleQuantityInput = () => {};
 
   const itemAddHandler = (item) => {
-    dispatch(CartActions.addToCart(item));
+    dispatch(CartActions.modifyCart(item));
   };
 
   const itemRemoveHandler = (id) => {

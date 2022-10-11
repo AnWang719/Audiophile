@@ -16,6 +16,27 @@ const CartSlice = createSlice({
 
       const existingCartItem = state.items[existingCartItemIndex];
 
+      let updatedTotalAmount =
+        state.totalAmount + action.payload.price * action.payload.quantity;
+
+      if (existingCartItem) {
+        state.items[existingCartItemIndex] = {
+          ...existingCartItem,
+          quantity: existingCartItem.quantity + action.payload.quantity,
+        };
+      } else {
+        state.items = state.items.concat(action.payload);
+      }
+      state.totalAmount = updatedTotalAmount;
+    },
+
+    modifyCart(state, action) {
+      const existingCartItemIndex = state.items.findIndex(
+        (item) => item.id === action.payload.id
+      );
+
+      const existingCartItem = state.items[existingCartItemIndex];
+
       let updatedTotalAmount;
 
       if (existingCartItem) {

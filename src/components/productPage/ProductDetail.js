@@ -1,5 +1,5 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
-import { useLocation, useNavigate, NavLink } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ImgText from "../../ui/ImgText";
 import classes from "./ProductDetail.module.css";
 import Card from "../../ui/Card";
@@ -64,6 +64,8 @@ function ProductDetail() {
         quantity: quantity,
       })
     );
+
+    dispatch(CartActions.isAddCartBtnHandler());
   };
 
   const listItems = includes.map((item) => (

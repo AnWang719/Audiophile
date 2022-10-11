@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   items: [],
   totalAmount: 0,
+  isAddCartBtn: false,
 };
 
 const CartSlice = createSlice({
@@ -16,42 +17,33 @@ const CartSlice = createSlice({
 
       const existingCartItem = state.items[existingCartItemIndex];
 
-      let updatedTotalAmount =
-        state.totalAmount + action.payload.price * action.payload.quantity;
-
-      if (existingCartItem) {
-        state.items[existingCartItemIndex] = {
-          ...existingCartItem,
-          quantity: existingCartItem.quantity + action.payload.quantity,
-        };
-      } else {
-        state.items = state.items.concat(action.payload);
-      }
-      state.totalAmount = updatedTotalAmount;
-    },
-
-    modifyCart(state, action) {
-      const existingCartItemIndex = state.items.findIndex(
-        (item) => item.id === action.payload.id
-      );
-
-      const existingCartItem = state.items[existingCartItemIndex];
-
       let updatedTotalAmount;
 
       if (existingCartItem) {
         state.items[existingCartItemIndex] = {
           ...existingCartItem,
-          quantity: existingCartItem.quantity + 1,
+          quantity:
+            existingCartItem.quantity +
+            (state.isAddCartBtn ? action.payload.quantity : 1),
         };
-        updatedTotalAmount = state.totalAmount + action.payload.price;
+
+        updatedTotalAmount =
+          state.totalAmount +
+          action.payload.price *
+            (state.isAddCartBtn ? action.payload.quantity : 1);
       } else {
         state.items = state.items.concat(action.payload);
-
         updatedTotalAmount =
           state.totalAmount + action.payload.price * action.payload.quantity;
       }
       state.totalAmount = updatedTotalAmount;
+    },
+
+    isAddCartBtnHandler(state, action) {
+      state.isAddCartBtn = true;
+    },
+    isAddFromCart(state, action) {
+      state.isAddCartBtn = false;
     },
 
     removeFromCart(state, action) {

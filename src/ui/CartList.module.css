@@ -1,0 +1,35 @@
+.amount {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.amount p:first-child {
+  color: grey;
+}
+.amount p:nth-child(2) {
+  font-weight: 600;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.modalHeader p:first-child {
+  font-weight: 600;
+}
+
+.modalHeader p:nth-child(2) {
+  color: grey;
+}
+.modalHeader p:nth-child(2):hover {
+  cursor: pointer;
+  color: #d87d4a;
+}
+
+.checkoutBtn {
+  width: 100% !important;
+}

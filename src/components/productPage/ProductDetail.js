@@ -61,7 +61,7 @@ function ProductDetail() {
         name,
         image,
         price,
-        quantity: quantity,
+        quantity,
       })
     );
 

@@ -1,0 +1,42 @@
+.cartItems {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.cartItemsLeft {
+  width: 70%;
+  display: flex;
+}
+
+.cartItemsLeft p {
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.cartItemsLeft p:nth-child(2) {
+  color: grey;
+}
+
+.cartItemsRight {
+  width: 30%;
+  align-content: center;
+  display: grid;
+}
+.cartItemsRight input {
+  width: 100%;
+}
+
+.image {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+.addBtn {
+  margin-right: 0 !important;
+}
+
+.cartItemsLeft div {
+  align-content: center;
+  display: grid;
+}

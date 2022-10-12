@@ -18,100 +18,12 @@
   letter-spacing: normal;
   cursor: pointer;
 }
-
-.cartItems {
-  margin-bottom: 10px;
-  display: flex;
-}
-
 .noItemsText {
   text-align: center;
   margin-bottom: 0;
 }
 
-.cartItemsLeft {
-  width: 70%;
-  display: flex;
-}
-
-.cartItemsLeft p {
-  margin-bottom: 0;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.cartItemsLeft p:nth-child(2) {
-  color: grey;
-}
-
-.cartItemsRight {
-  width: 30%;
-  align-content: center;
-  display: grid;
-}
-.cartItemsRight input {
-  width: 100%;
-}
-
-.amount {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-}
-
-.amount p:first-child {
-  color: grey;
-}
-.amount p:nth-child(2) {
-  font-weight: 600;
-}
-
-.image {
-  width: 60px;
-  height: 60px;
-  margin-right: 10px;
-}
-.modalHeader {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
-}
-
-.modalHeader p:first-child {
-  font-weight: 600;
-}
-
-.modalHeader p:nth-child(2) {
-  color: grey;
-}
-.modalHeader p:nth-child(2):hover {
-  cursor: pointer;
-  color: #d87d4a;
-}
-
-.addBtn {
-  margin-right: 0 !important;
-}
-
-.checkoutBtn {
-  width: 100% !important;
-}
-
 .cartItemsLeft div {
   align-content: center;
   display: grid;
-}
-
-.modalHeaderLeft p {
-  font-weight: 600;
-}
-
-.modalHeaderRight {
-  text-align: right;
-  width: 30%;
-}
-
-.modalHeaderRight p {
-  color: grey;
 }

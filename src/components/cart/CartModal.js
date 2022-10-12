@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Container, Image } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import cart from "../../assets/icon-cart.svg";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./CartModal.module.css";
-import Input from "../../ui/Input";
-import ProductButton from "../../ui/ProductButton";
+
 import { CartActions } from "../../store/CartSlice";
+import CartListItem from "../../ui/CartListItem";
+import CartList from "../../ui/CartList";
 
 function CartModal() {
   const [show, setShow] = useState(false);
@@ -31,24 +32,17 @@ function CartModal() {
   };
 
   const Cart = CartItems.map((item) => (
-    <div key={item.id} className={classes.cartItems}>
-      <div className={classes.cartItemsLeft}>
-        <Image src={item.image.desktop} fluid className={classes.image} />
-        <div>
-          <p>{item.name}</p>
-          <p>${item.price}</p>
-        </div>
-      </div>
-      <div className={classes.cartItemsRight}>
-        <Input
-          className={classes.addBtn}
-          quantity={item.quantity}
-          handleQuantityInput={handleQuantityInput}
-          itemAddHandler={itemAddHandler.bind(this, item)}
-          itemRemoveHandler={itemRemoveHandler.bind(this, item.id)}
-        />
-      </div>
-    </div>
+    <CartListItem
+      id={item.id}
+      image={item.image.desktop}
+      name={item.name}
+      price={item.price}
+      quantity={item.quantity}
+      handleQuantityInput={handleQuantityInput}
+      itemAddHandler={itemAddHandler.bind(this, item)}
+      itemRemoveHandler={itemRemoveHandler.bind(this, item.id)}
+      isSummary={false}
+    />
   ));
 
   useEffect(() => {
@@ -84,21 +78,17 @@ function CartModal() {
         <Modal.Body>
           <Container>
             {CartItems.length >= 1 ? (
-              <>
-                <div className={classes.modalHeader}>
-                  <p> CART({CartItems.length})</p>
-                  <p onClick={removeAllHandler}> Remove all</p>
-                </div>
-                {Cart}
-                <div className={classes.amount}>
-                  <p>TOTAL</p>
-                  <p>${TotalAmount}</p>
-                </div>
-
-                <ProductButton className={classes.checkoutBtn}>
-                  CHECKOUT
-                </ProductButton>
-              </>
+              <CartList
+                cart={Cart}
+                title={`CART(${CartItems.length})`}
+                isSubtext={true}
+                subText="Rmove all"
+                totalAmount={TotalAmount}
+                btnText="CHECKOUT"
+                isSummary={false}
+                removeAllHandler={removeAllHandler}
+                TotalAmount={TotalAmount}
+              />
             ) : (
               <p className={classes.noItemsText}>
                 Currently no items in your cart

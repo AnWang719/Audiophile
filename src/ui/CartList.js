@@ -13,6 +13,7 @@ function CartList({
   grandTotal,
   cart,
   removeAllHandler,
+  checkoutHandler,
 }) {
   return (
     <>
@@ -43,7 +44,9 @@ function CartList({
         </>
       )}
 
-      <ProductButton className={classes.checkoutBtn}>{btnText}</ProductButton>
+      <ProductButton className={classes.checkoutBtn} onClick={checkoutHandler}>
+        {btnText}
+      </ProductButton>
     </>
   );
 }

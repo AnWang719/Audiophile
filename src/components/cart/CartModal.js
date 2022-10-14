@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import cart from "../../assets/icon-cart.svg";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./CartModal.module.css";
-
+import { useNavigate } from "react-router-dom";
 import { CartActions } from "../../store/CartSlice";
 import CartListItem from "../../ui/CartListItem";
 import CartList from "../../ui/CartList";
@@ -61,6 +61,12 @@ function CartModal() {
     return acc + value;
   }, 0);
 
+  const navigate = useNavigate();
+  const checkoutHandler = () => {
+    navigate("/checkOut");
+    setShow(false);
+  };
+
   return (
     <>
       <div className={classes.cart} onClick={() => setShow(true)}>
@@ -88,6 +94,7 @@ function CartModal() {
                 isSummary={false}
                 removeAllHandler={removeAllHandler}
                 TotalAmount={TotalAmount}
+                checkoutHandler={checkoutHandler}
               />
             ) : (
               <p className={classes.noItemsText}>

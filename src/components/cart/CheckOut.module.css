@@ -2,10 +2,36 @@
   margin-bottom: 2rem;
 }
 
+.checkoutForm {
+  height: 100%;
+}
+
 .shippingDetails {
   background-color: whitesmoke;
+  padding: 40px;
+  margin-bottom: 20px;
 }
 
 .cartDetails {
   background-color: whitesmoke;
+  padding: 40px;
+}
+
+@media (min-width: 992px) {
+  .checkoutForm {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .shippingDetails {
+    width: 73%;
+    margin-bottom: 0;
+  }
+
+  .cartDetails {
+    width: 25%;
+    height: fit-content;
+  }
 }

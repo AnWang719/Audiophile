@@ -10,45 +10,42 @@ function CheckOut() {
       <Container className={classes.checkoutForm}>
         <div className={classes.shippingDetails}>
           <h1>CHECKOUT</h1>
-
-          <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Text className="text-muted">BILLING DETAILS</Form.Text>
+          <div>
+            <p>BILLING DETAILS</p>
+            <Form>
               <Row>
                 <Col sm={12} md={6}>
-                  <Form.Label>Name</Form.Label>
-                  <Form.Control type="text" placeholder="AlexeiWard" />
+                  <Form.Group className="mb-3" controlId="formName">
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control type="text" placeholder="AlexeiWard" />
+                  </Form.Group>
                 </Col>
                 <Col sm={12} md={6}>
-                  <Form.Label>Email Address</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="alexeiward@mail.com"
-                  />
+                  <Form.Group className="mb-3" controlId="formEmail">
+                    <Form.Label>Email Address</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder="alexeiward@mail.com"
+                    />
+                  </Form.Group>
                 </Col>
               </Row>
 
               <Row>
                 <Col sm={12} md={6}>
-                  <Form.Label>Phone Number</Form.Label>
-                  <Form.Control type="number" placeholder="+1202-555-0136" />
+                  <Form.Group className="mb-3" controlId="formNumber">
+                    <Form.Label>Phone Number</Form.Label>
+                    <Form.Control type="number" placeholder="+1202-555-0136" />
+                  </Form.Group>
                 </Col>
                 <Col sm={12} md={6}></Col>
               </Row>
-            </Form.Group>
-          </Form>
+            </Form>
+          </div>
         </div>
         <div className={classes.cartDetails}>
           <CartList />
         </div>
-        {/* <Row>
-          <Col md={12} lg={8} className={classes.shippingDetails}>
-          
-          </Col>
-          <Col md={12} lg={4} className={classes.cartDetails}>
-          
-          </Col>
-        </Row> */}
       </Container>
     </>
   );

@@ -10,9 +10,10 @@ function CheckOut() {
       <Container className={classes.checkoutForm}>
         <div className={classes.shippingDetails}>
           <h1>CHECKOUT</h1>
-          <div>
-            <p>BILLING DETAILS</p>
-            <Form>
+          <Form>
+            <div className={classes.billingInfo}>
+              <p>BILLING DETAILS</p>
+
               <Row>
                 <Col sm={12} md={6}>
                   <Form.Group className="mb-3" controlId="formName">
@@ -40,8 +41,47 @@ function CheckOut() {
                 </Col>
                 <Col sm={12} md={6}></Col>
               </Row>
-            </Form>
-          </div>
+            </div>
+
+            <div className={classes.shippingInfo}>
+              <p>SHIPPING INFO</p>
+              <Row>
+                <Col>
+                  <Form.Group className="mb-3" controlId="formAdress">
+                    <Form.Label>Address</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="1137 Williams Avenue"
+                    />
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Row>
+                <Col sm={12} md={6}>
+                  <Form.Group className="mb-3" controlId="formZipCode">
+                    <Form.Label>ZIP Code</Form.Label>
+                    <Form.Control type="number" placeholder="10001" />
+                  </Form.Group>
+                </Col>
+                <Col sm={12} md={6}>
+                  <Form.Group className="mb-3" controlId="formCity">
+                    <Form.Label>City</Form.Label>
+                    <Form.Control type="text" placeholder="Auckland" />
+                  </Form.Group>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col sm={12} md={6}>
+                  <Form.Group className="mb-3" controlId="formCountry">
+                    <Form.Label>Country</Form.Label>
+                    <Form.Control type="text" placeholder="New Zealand" />
+                  </Form.Group>
+                </Col>
+                <Col sm={12} md={6}></Col>
+              </Row>
+            </div>
+          </Form>
         </div>
         <div className={classes.cartDetails}>
           <CartList />

@@ -2,8 +2,20 @@
   margin-bottom: 2rem;
 }
 
-.checkoutForm {
-  height: 100%;
+.checkoutForm p {
+  color: #d87d4a;
+  font-weight: 600;
+}
+
+.checkoutForm input:focus {
+  outline: #d87d4a;
+}
+.billingInfo {
+  margin-bottom: 2rem;
+}
+
+.shippingInfo {
+  margin-bottom: 2rem;
 }
 
 .shippingDetails {

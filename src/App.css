@@ -20,6 +20,14 @@
   box-shadow: none !important;
 }
 
+.form-control:focus {
+  border-color: #d87d4a !important;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
 @media (min-width: 1199.98px) {
   .nav-link {
     padding-left: 40px !important;

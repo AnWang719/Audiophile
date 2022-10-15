@@ -81,6 +81,9 @@ function CheckOut() {
                 <Col sm={12} md={6}></Col>
               </Row>
             </div>
+            <div className={classes.paymentInfo}>
+              <p>PAYEMENT DETAILS</p>
+            </div>
           </Form>
         </div>
         <div className={classes.cartDetails}>

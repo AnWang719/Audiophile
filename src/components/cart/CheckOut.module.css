@@ -2,7 +2,7 @@
   margin-bottom: 2rem;
 }
 
-.checkoutForm p {
+.subHeader {
   color: #d87d4a;
   font-weight: 600;
 }
@@ -29,6 +29,43 @@
   padding: 40px;
 }
 
+.paymentMenthod {
+  border: 1px #d87d4a solid;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+input[type="radio"] {
+  /* remove standard background appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* create custom radiobutton appearance */
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  /* background-color only for content */
+  background-clip: content-box;
+  border: 1px solid #bbbbbb;
+  background-color: #e7e6e7;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* appearance for checked radiobutton */
+input[type="radio"]:checked {
+  background-color: #d87d4a;
+}
+
+.terms {
+  display: none;
+}
+
 @media (min-width: 992px) {
   .checkoutForm {
     display: flex;
@@ -45,5 +82,19 @@
   .cartDetails {
     width: 25%;
     height: fit-content;
+  }
+
+  .terms {
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .terms p {
+    margin-left: 30px;
+    margin-bottom: 0;
+    font-weight: 400;
+    color: gray;
   }
 }

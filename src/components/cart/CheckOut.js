@@ -1,9 +1,28 @@
 import GoBack from "../../ui/GoBack";
-import { Container, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col, Form, Image } from "react-bootstrap";
 import CartList from "../../ui/CartList";
 import classes from "./CheckOut.module.css";
+import cashOnDelivery from "../../assets/icon-cash-on-delivery.svg";
+import { useSelector } from "react-redux";
+import CartListItem from "../../ui/CartListItem";
 
 function CheckOut() {
+  const CartItems = useSelector((state) => state.items);
+
+  console.log(CartItems);
+  const TotalAmount = useSelector((state) => state.totalAmount);
+
+  const Cart = CartItems.map((item) => (
+    <CartListItem
+      id={item.id}
+      image={item.image.desktop}
+      name={item.name}
+      price={item.price}
+      quantity={item.quantity}
+      isSummary={true}
+    />
+  ));
+
   return (
     <>
       <GoBack />
@@ -12,7 +31,7 @@ function CheckOut() {
           <h1>CHECKOUT</h1>
           <Form>
             <div className={classes.billingInfo}>
-              <p>BILLING DETAILS</p>
+              <p className={classes.subHeader}>BILLING DETAILS</p>
 
               <Row>
                 <Col sm={12} md={6}>
@@ -44,7 +63,7 @@ function CheckOut() {
             </div>
 
             <div className={classes.shippingInfo}>
-              <p>SHIPPING INFO</p>
+              <p className={classes.subHeader}>SHIPPING INFO</p>
               <Row>
                 <Col>
                   <Form.Group className="mb-3" controlId="formAdress">
@@ -82,12 +101,56 @@ function CheckOut() {
               </Row>
             </div>
             <div className={classes.paymentInfo}>
-              <p>PAYEMENT DETAILS</p>
+              <p className={classes.subHeader}> PAYEMENT DETAILS</p>
+
+              <Row>
+                <Col sm={12} md={6}>
+                  <h6>Payment Method</h6>
+                </Col>
+                <Col sm={12} md={6}>
+                  <div className={classes.paymentMenthod}>
+                    <input
+                      type="radio"
+                      id="eMoney"
+                      name="payment_method"
+                      value="e-Money"
+                    />
+                      <label htmlFor="eMoney">e-Money</label>
+                  </div>
+                  <div className={classes.paymentMenthod}>
+                    <input
+                      type="radio"
+                      id="cash"
+                      name="payment_method"
+                      value="cashOnDelivery"
+                    />
+                      <label htmlFor="cash">Cash on Delivery</label>
+                  </div>
+                </Col>
+              </Row>
+            </div>
+
+            <div className={classes.terms}>
+              <Image src={cashOnDelivery} fluid />
+              <p>
+                The ‘Cash on Delivery’ option enables you to pay in cash when
+                our delivery courier arrives at your residence. Just make sure
+                your address is correct so that your order will not be
+                cancelled.
+              </p>
             </div>
           </Form>
         </div>
         <div className={classes.cartDetails}>
-          <CartList />
+          <CartList
+            cart={Cart}
+            title="SUMMARY"
+            isSubtext={false}
+            totalAmount={TotalAmount}
+            btnText="CONTINUE"
+            isSummary={true}
+            TotalAmount={TotalAmount}
+          />
         </div>
       </Container>
     </>

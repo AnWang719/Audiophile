@@ -22,6 +22,7 @@
   width: 30%;
   align-content: center;
   display: grid;
+  text-align: end;
 }
 .cartItemsRight input {
   width: 100%;

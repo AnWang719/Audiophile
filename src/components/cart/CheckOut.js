@@ -23,6 +23,11 @@ function CheckOut() {
     />
   ));
 
+  const Shipping = 50;
+
+  const VAT = (TotalAmount + Shipping) * 0.2;
+  const GrandTotal = TotalAmount + Shipping;
+
   return (
     <>
       <GoBack />
@@ -149,7 +154,10 @@ function CheckOut() {
             totalAmount={TotalAmount}
             btnText="CONTINUE"
             isSummary={true}
+            shipping={Shipping}
             TotalAmount={TotalAmount}
+            vat={Math.round(VAT)}
+            grandTotal={Math.round(GrandTotal)}
           />
         </div>
       </Container>

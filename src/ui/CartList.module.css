@@ -5,11 +5,23 @@
   font-size: 0.9rem;
 }
 
+.amount p {
+  margin-bottom: 0;
+}
+
 .amount p:first-child {
   color: grey;
 }
 .amount p:nth-child(2) {
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.grandTotal {
+  margin-top: 2rem;
+}
+
+.grandTotal p:nth-child(2) {
+  color: #d87d4a;
 }
 
 .modalHeader {
@@ -19,7 +31,7 @@
 }
 
 .modalHeader p:first-child {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .modalHeader p:nth-child(2) {
@@ -31,5 +43,6 @@
 }
 
 .checkoutBtn {
+  margin-top: 1.5rem;
   width: 100% !important;
 }

@@ -14,6 +14,7 @@ function CartList({
   cart,
   removeAllHandler,
   checkoutHandler,
+  type,
 }) {
   return (
     <>
@@ -37,14 +38,18 @@ function CartList({
             <p>VAT(INCLUDED)</p>
             <p>${vat}</p>
           </div>
-          <div className={classes.amount}>
+          <div className={`${classes.amount} ${classes.grandTotal}`}>
             <p>GRAND TOTAL</p>
             <p>${grandTotal}</p>
           </div>
         </>
       )}
 
-      <ProductButton className={classes.checkoutBtn} onClick={checkoutHandler}>
+      <ProductButton
+        className={classes.checkoutBtn}
+        onClick={checkoutHandler}
+        type={type}
+      >
         {btnText}
       </ProductButton>
     </>

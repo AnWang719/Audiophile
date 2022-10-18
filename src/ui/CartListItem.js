@@ -3,7 +3,6 @@ import Input from "./Input";
 import classes from "./CartListItem.module.css";
 
 function CartListItem({
-  id,
   image,
   name,
   price,
@@ -14,7 +13,7 @@ function CartListItem({
   isSummary,
 }) {
   return (
-    <div key={id} className={classes.cartItems}>
+    <div className={classes.cartItems}>
       <div className={classes.cartItemsLeft}>
         <Image src={image} fluid className={classes.image} />
         <div>

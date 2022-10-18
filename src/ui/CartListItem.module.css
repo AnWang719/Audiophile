@@ -11,7 +11,7 @@
 .cartItemsLeft p {
   margin-bottom: 0;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .cartItemsLeft p:nth-child(2) {
@@ -23,6 +23,8 @@
   align-content: center;
   display: grid;
   text-align: end;
+  font-weight: 700;
+  color: grey;
 }
 .cartItemsRight input {
   width: 100%;

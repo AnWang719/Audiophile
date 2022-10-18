@@ -39,6 +39,12 @@
   align-items: center;
 }
 
+.validation {
+  color: red;
+  display: flex;
+  justify-content: space-between;
+}
+
 input[type="radio"] {
   /* remove standard background appearance */
   -webkit-appearance: none;
@@ -66,6 +72,20 @@ input[type="radio"]:checked {
   display: none;
 }
 
+.eMoneyInfo {
+  margin-top: 1rem;
+}
+
+.confirmationModal {
+}
+.header {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.subText {
+  color: grey;
+}
 @media (min-width: 992px) {
   .checkoutForm {
     display: flex;

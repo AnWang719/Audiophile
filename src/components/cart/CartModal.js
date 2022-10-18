@@ -33,7 +33,7 @@ function CartModal() {
 
   const Cart = CartItems.map((item) => (
     <CartListItem
-      id={item.id}
+      key={item.id}
       image={item.image.desktop}
       name={item.name}
       price={item.price}

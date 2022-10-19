@@ -6,13 +6,48 @@ import cashOnDelivery from "../../assets/icon-cash-on-delivery.svg";
 import confirmation from "../../assets/icon-order-confirmation.svg";
 import { useSelector } from "react-redux";
 import CartListItem from "../../ui/CartListItem";
-import { useState } from "react";
+
 import Modal from "react-bootstrap/Modal";
+import ProductButton from "../../ui/ProductButton";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { CartActions } from "../../store/CartSlice";
+import { useState } from "react";
+import useCollapse from "react-collapsed";
 function CheckOut() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
   const CartItems = useSelector((state) => state.items);
 
-  console.log(CartItems);
   const TotalAmount = useSelector((state) => state.totalAmount);
+
+  const [{ id, name, image, price, quantity }] = CartItems;
+
+  const FirstItem = (
+    <CartListItem
+      key={id}
+      image={image.desktop}
+      name={name}
+      price={price}
+      quantity={quantity}
+      isSummary={true}
+    />
+  );
+
+  const midItems = CartItems.filter((item, i) => i !== 0);
+
+  const MidItems = midItems.map((item) => (
+    <CartListItem
+      key={item.id}
+      image={item.image.desktop}
+      name={item.name}
+      price={item.price}
+      quantity={item.quantity}
+      isSummary={true}
+    />
+  ));
 
   const Cart = CartItems.map((item) => (
     <CartListItem
@@ -267,22 +302,50 @@ function CheckOut() {
           onHide={handleClose}
           dialogClassName={classes.confirmationModal}
         >
-          <Modal.Body>
+          <Modal.Body className={classes.modalBody}>
             <Image src={confirmation} fluid />
             <p className={`${classes.header} mt-4`}>THANK YOU FOR YOUR ORDER</p>
 
             <p className={`${classes.subText} mb-4`}>
               You will receive an email confirmation shortly
             </p>
-            <Row>
-              <Col sm={12} md={7}>
-                <Container>{Cart}</Container>
+            <Row className={classes.orderCard}>
+              <Col sm={12} md={7} className={classes.orderCardLeft}>
+                {FirstItem}
+
+                {CartItems.length > 1 && (
+                  <>
+                    <div {...getCollapseProps()}>
+                      <div className={classes.otherItems}>{MidItems}</div>
+                    </div>
+                    <div
+                      className={classes.otherItmesText}
+                      {...getToggleProps()}
+                    >
+                      {isExpanded ? (
+                        <p>show less</p>
+                      ) : (
+                        <p>and {midItems.length} other item(s)</p>
+                      )}
+                    </div>
+                  </>
+                )}
               </Col>
-              <Col sm={12} md={5}>
+              <Col sm={12} md={5} className={classes.orderCardRight}>
                 <p>GRAND TOTAL</p>
-                {TotalAmount}
+                <p> ${TotalAmount}</p>
               </Col>
             </Row>
+
+            <ProductButton
+              className={classes.backHomeBtn}
+              onClick={() => {
+                navigate("/home");
+                dispatch(CartActions.emptyCart());
+              }}
+            >
+              BACK TO HOME
+            </ProductButton>
           </Modal.Body>
         </Modal>
       </Form>

@@ -76,8 +76,6 @@ input[type="radio"]:checked {
   margin-top: 1rem;
 }
 
-.confirmationModal {
-}
 .header {
   font-weight: 700;
   font-size: 2rem;
@@ -86,6 +84,57 @@ input[type="radio"]:checked {
 .subText {
   color: grey;
 }
+.modalBody {
+  padding: 2rem !important;
+}
+.orderCard {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.orderCardLeft {
+  background-color: #f1f1f1;
+  padding: 1rem;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.orderCardRight {
+  padding: 1rem;
+  background-color: black;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: grid;
+  align-content: end;
+}
+
+.orderCardRight p:first-child {
+  color: grey;
+
+  font-size: 0.8rem;
+}
+
+.orderCardRight p:nth-child(2) {
+  color: white;
+}
+
+.backHomeBtn {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.otherItmesText {
+  border-top: 1px solid lightgrey;
+  text-align: center;
+  color: grey;
+  padding-top: 0.8rem;
+  font-size: 0.8rem;
+}
+
+.otherItmesText p {
+  margin-bottom: 0;
+}
+
 @media (min-width: 992px) {
   .checkoutForm {
     display: flex;

@@ -50,7 +50,7 @@ function Footer() {
           </Row>
           <Row>
             <Col md={6} sm={12}>
-              <p>Copyright 2022. All Rights Reserved</p>
+              <p>Copyright 2022. All Rights Reserved By An Wang</p>
             </Col>
             <Col md={6} sm={12}>
               <div className={classes.socialIcons}>

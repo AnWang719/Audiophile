@@ -18,6 +18,7 @@ function LandingJumbotron() {
   return (
     <div className={classes.outer}>
       <Container>
+        <div className={classes.emptyDiv}></div>
         <div className={classes.Jumbotron}>
           <div className={classes.text}>
             <span>NEW PRODUCT</span>

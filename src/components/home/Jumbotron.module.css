@@ -6,6 +6,9 @@
   border-bottom-right-radius: 10px;
 }
 
+.emptyDiv {
+  height: 50px;
+}
 .Jumbotron {
   background-image: url("../../assets/image-header.jpg");
   background-position: center;
@@ -14,7 +17,7 @@
   min-height: 50vh;
   position: relative;
   text-align: center;
-  margin-top: 150px;
+  /* margin-top: 150px; */
 }
 
 .text {
@@ -25,7 +28,6 @@
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-  /* margin: 10px 0; */
 }
 span {
   font-weight: 200;
@@ -43,21 +45,6 @@ span {
   margin-bottom: 1.5rem;
 }
 
-/* .button {
-  border-radius: 0;
-  background-color: #d87d4a;
-  font-size: 0.8rem;
-  color: white;
-  width: 8rem;
-  padding: 10px;
-  text-transform: uppercase;
-  margin: 0 auto;
-}
-.button:hover {
-  background-color: #fbaf85;
-  color: white;
-} */
-
 @media (min-width: 1080px) {
   .Jumbotron {
     background-image: url("../../assets/image-hero.jpg");
@@ -72,7 +59,4 @@ span {
     text-align: left;
     width: 35%;
   }
-  /* .button {
-    margin: 0;
-  } */
 }

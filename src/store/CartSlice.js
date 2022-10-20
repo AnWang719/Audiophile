@@ -73,11 +73,14 @@ const CartSlice = createSlice({
 
       // state.items = updatedItems;
       state.totalAmount = updatedTotalAmount;
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(state));
     },
 
     emptyCart(state, action) {
       state.items = [];
+
       state.totalAmount = 0;
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(state));
     },
   },
 });

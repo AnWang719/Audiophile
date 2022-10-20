@@ -8,6 +8,10 @@
   filter: invert(1) sepia(1) saturate(8) hue-rotate(175deg);
 }
 
+.navbar {
+  padding: 0 !important;
+}
+
 .navbar-toggler-icon {
   width: 2em !important;
   height: 2em !important;
@@ -26,6 +30,10 @@
 
 .form-label {
   font-weight: 600;
+}
+
+.pt-4 {
+  border-bottom: 1px solid white;
 }
 
 @media (min-width: 1199.98px) {

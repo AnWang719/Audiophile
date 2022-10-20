@@ -3,18 +3,18 @@
   background-color: #181818 !important;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 99;
 }
-
+/* .menuContainer {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+} */
 .bgblack {
   background-color: #181818 !important;
+  padding: 0;
 }
 
-.line {
-  border-top: 1px solid white;
+.emptyDiv {
+  height: 60px;
 }
 
 .Offcanvas {
@@ -28,8 +28,8 @@
   color: orange !important;
 }
 
-/* @media (min-width: 1199.98px) {
-  .navLink {
-    padding-left: 40px !important;
+@media (min-width: 768px) {
+  .emptyDiv {
+    height: 120px;
   }
-} */
+}

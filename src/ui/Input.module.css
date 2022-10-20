@@ -33,6 +33,7 @@ input {
   font-size: 1.2rem;
   border: 0;
   vertical-align: middle;
+  border-radius: 0;
 }
 
 input::-webkit-outer-spin-button,

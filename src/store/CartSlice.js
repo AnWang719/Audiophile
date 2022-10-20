@@ -1,14 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-const initialState = {
+const LOCAL_STORAGE_KEY = "audiophile";
+const InitialState = {
   items: [],
   totalAmount: 0,
   isAddCartBtn: false,
 };
 
+const getState =
+  localStorage.getItem(LOCAL_STORAGE_KEY) !== null
+    ? JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    : InitialState;
+
 const CartSlice = createSlice({
   name: "cart",
-  initialState,
+  initialState: getState,
   reducers: {
     addToCart(state, action) {
       const existingCartItemIndex = state.items.findIndex(
@@ -37,6 +42,8 @@ const CartSlice = createSlice({
           state.totalAmount + action.payload.price * action.payload.quantity;
       }
       state.totalAmount = updatedTotalAmount;
+
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(state));
     },
 
     isAddCartBtnHandler(state, action) {

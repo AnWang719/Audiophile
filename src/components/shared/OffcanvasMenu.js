@@ -12,14 +12,21 @@ function OffcanvasMenu() {
     <div className={classes.menuOuter}>
       <Container>
         {["md"].map((expand) => (
-          <Navbar key={expand} expand={expand} className={classes.bgblack}>
+          <Navbar
+            key={expand}
+            expand={expand}
+            className={classes.bgblack}
+            fixedTop={true}
+          >
             <Container className="mt-4 mb-4">
               <Navbar.Toggle
                 aria-controls={`offcanvasNavbar-expand-${expand}`}
                 className="navbar-dark"
               />
               <Navbar.Brand href="#">
-                <img src={logo} alt="logo" />
+                <NavLink to="/home">
+                  <img src={logo} alt="logo" />
+                </NavLink>
               </Navbar.Brand>
 
               <Navbar.Offcanvas

@@ -14,7 +14,7 @@ function Footer() {
         <div className={classes.footerDiv}>
           <Row>
             <Col lg={6} md={12}>
-              <Image src={logo} fluid />
+              <Image src={logo} alt="logo" fluid />
             </Col>
             <Col lg={6} md={12}>
               <div className={classes.footerRight}>
@@ -54,9 +54,9 @@ function Footer() {
             </Col>
             <Col md={6} sm={12}>
               <div className={classes.socialIcons}>
-                <Image src={facebook} fluid />
-                <Image src={instagram} fluid />
-                <Image src={twitter} fluid />
+                <Image src={facebook} alt="facebook icon" fluid />
+                <Image src={instagram} alt="instagram icon" fluid />
+                <Image src={twitter} alt="twitter icon" fluid />
               </div>
             </Col>
           </Row>

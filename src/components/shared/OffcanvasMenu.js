@@ -34,9 +34,6 @@ function OffcanvasMenu() {
                 className="navbar-dark"
                 onClick={toggleMenu}
               />
-              {/* <Navbar.Brand href="#">
-        
-              </Navbar.Brand> */}
               <NavLink to="/home" onClick={toggleMenu}>
                 <img src={logo} alt="logo" />
               </NavLink>

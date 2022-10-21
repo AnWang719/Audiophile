@@ -252,7 +252,7 @@ function CheckOut() {
                     </div>
                   </Col>
                 </Row>
-                {selected === "e-Money" && (
+                {selected === "e-Money" ? (
                   <Row className={classes.eMoneyInfo}>
                     <Col sm={12} md={6}>
                       <Form.Group className="mb-3" controlId="eMoneyNumber">
@@ -283,17 +283,17 @@ function CheckOut() {
                       </Form.Group>
                     </Col>
                   </Row>
+                ) : (
+                  <div className={classes.terms}>
+                    <Image src={cashOnDelivery} fluid />
+                    <p>
+                      The ‘Cash on Delivery’ option enables you to pay in cash
+                      when our delivery courier arrives at your residence. Just
+                      make sure your address is correct so that your order will
+                      not be cancelled.
+                    </p>
+                  </div>
                 )}
-              </div>
-
-              <div className={classes.terms}>
-                <Image src={cashOnDelivery} fluid />
-                <p>
-                  The ‘Cash on Delivery’ option enables you to pay in cash when
-                  our delivery courier arrives at your residence. Just make sure
-                  your address is correct so that your order will not be
-                  cancelled.
-                </p>
               </div>
             </div>
             <div className={classes.cartDetails}>

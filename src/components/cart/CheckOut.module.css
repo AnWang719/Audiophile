@@ -73,7 +73,18 @@ input[type="radio"]:checked {
 }
 
 .terms {
-  display: none;
+  display: flex;
+
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.terms p {
+  margin-left: 30px;
+  margin-bottom: 0;
+  font-weight: 400;
+  color: gray;
 }
 
 .eMoneyInfo {
@@ -164,17 +175,15 @@ input[type="radio"]:checked {
     height: fit-content;
   }
 
-  .terms {
+  /* .terms {
     display: flex;
-    align-items: center;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-  }
+    flex-direction: row;
+  } */
 
-  .terms p {
+  /* .terms p {
     margin-left: 30px;
     margin-bottom: 0;
     font-weight: 400;
     color: gray;
-  }
+  } */
 }

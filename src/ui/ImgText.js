@@ -30,7 +30,7 @@ function ImgText({
       <Row>
         <Col md={{ span: span1 }} lg={{ span: 6, order: order1 }}>
           <div className={classes.ImgContainer}>
-            <Image src={src} fluid />
+            <Image src={src} alt={title1} fluid />
           </div>
         </Col>
         <Col md={{ span: span2 }} lg={{ span: 6, order: order2 }}>
@@ -47,33 +47,14 @@ function ImgText({
             <p className={classes.text}>{text}</p>
             {priceExist && <p className={classes.price}>${price}</p>}
             <div className={classes.inputContainer}>
-              {
-                counterExist && (
-                  <Input
-                    quantity={quantity}
-                    handleQuantityInput={handleQuantityInput}
-                    itemAddHandler={itemAddHandler}
-                    itemRemoveHandler={itemRemoveHandler}
-                  />
-                )
-
-                //   (
-                //   <div className={classes.number}>
-                //     <span className={classes.minus} onClick={itemRemoveHandler}>
-                //       -
-                //     </span>
-                //     <input
-                //       type="number"
-                //       min={1}
-                //       value={quantity}
-                //       onChange={handleQuantityInput}
-                //     />
-                //     <span className={classes.plus} onClick={itemAddHandler}>
-                //       +
-                //     </span>
-                //   </div>
-                // )
-              }
+              {counterExist && (
+                <Input
+                  quantity={quantity}
+                  handleQuantityInput={handleQuantityInput}
+                  itemAddHandler={itemAddHandler}
+                  itemRemoveHandler={itemRemoveHandler}
+                />
+              )}
 
               {btnExist && (
                 <ProductButton onClick={btnOnClick}>{btnText}</ProductButton>

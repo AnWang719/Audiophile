@@ -17,14 +17,16 @@ function App() {
   return (
     <>
       <OffcanvasMenu />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/:id" element={<ProductPage />} />
-        <Route path="/productDetail" element={<ProductDetail />} />
-        <Route path="/checkOut" element={<CheckOut />} />
-      </Routes>
-      {pathname === "/checkOut" ? null : <BestGear />}
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/:id" element={<ProductPage />} />
+          <Route path="/productDetail" element={<ProductDetail />} />
+          <Route path="/checkOut" element={<CheckOut />} />
+        </Routes>
+        {pathname === "/checkOut" ? null : <BestGear />}
+      </main>
       <Footer />
     </>
   );

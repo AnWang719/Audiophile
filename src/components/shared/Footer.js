@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className={classes.footerContainer}>
+    <footer className={classes.footerContainer}>
       <Container>
         <div className={classes.orangeDiv}></div>
         <div className={classes.footerDiv}>
@@ -62,7 +62,7 @@ function Footer() {
           </Row>
         </div>
       </Container>
-    </div>
+    </footer>
   );
 }
 

@@ -36,6 +36,11 @@
   border-bottom: 1px solid white;
 }
 
+.modal-open {
+  overflow: auto !important;
+  padding-right: 0 !important;
+}
+
 @media (min-width: 1199.98px) {
   .nav-link {
     padding-left: 40px !important;

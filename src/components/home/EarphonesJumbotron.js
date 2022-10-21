@@ -20,7 +20,7 @@ function EarphonesJumbotron() {
       <Row>
         <Col xs={12} md={6} className={classes.col}>
           <div className={classes.EarphonesImg}>
-            <Image src={earphones} fluid />
+            <Image src={earphones} alt="YX1 Earphones " fluid />
           </div>
         </Col>
         <Col xs={12} md={6} className={classes.col}>

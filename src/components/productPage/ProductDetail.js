@@ -94,14 +94,6 @@ function ProductDetail() {
 
   return (
     <>
-      {/* <Container className={classes.goBackContainer}>
-        <div className={classes.goBackDiv}>
-          <NavLink to={`/${category}`} className={classes.goBackBtn}>
-            Go Back
-          </NavLink>
-        </div>
-      </Container> */}
-
       <GoBack goBackTo={category} />
 
       <ImgText
@@ -149,6 +141,7 @@ function ProductDetail() {
                         ? gallery.first.tablet
                         : gallery.first.mobile
                     }
+                    alt={name}
                     fluid
                   />
                 </Col>
@@ -162,6 +155,7 @@ function ProductDetail() {
                         ? gallery.second.tablet
                         : gallery.second.mobile
                     }
+                    alt={name}
                     fluid
                   />
                 </Col>
@@ -177,6 +171,7 @@ function ProductDetail() {
                     ? gallery.third.tablet
                     : gallery.third.mobile
                 }
+                alt={name}
                 fluid
               />
             </Col>

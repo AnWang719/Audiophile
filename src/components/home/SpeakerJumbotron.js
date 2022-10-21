@@ -18,10 +18,18 @@ function SpeakerJumbotron() {
 
   return (
     <Container className={classes.SpeakerJumbotronContainer}>
-      <Image src={circles} className={classes.circleImg} />
+      <Image
+        src={circles}
+        alt="background circle"
+        className={classes.circleImg}
+      />
       <div className={classes.SpeakerJumbotronOverlay}>
         <div className={classes.SpeakerJumbotronImgContainer}>
-          <Image src={speaker} className={classes.SpeakerJumbotronImg} />
+          <Image
+            src={speaker}
+            alt="zx9 speaker"
+            className={classes.SpeakerJumbotronImg}
+          />
         </div>
 
         <div className={classes.SpeakerJumbotronTextContainer}>

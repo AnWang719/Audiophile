@@ -10,14 +10,18 @@ function ProductCard({ img, title, link }) {
     <>
       <div className={classes.cardContainer}>
         <div className={classes.cardImgContainer}>
-          <Image src={img} className={classes.cardImg} />
+          <Image src={img} className={classes.cardImg} alt={title} />
         </div>
 
         <div className={classes.cardBody}>
           <p>{title}</p>
           <NavLink to={link}>
             SHOP
-            <Image src={arrowRight} className={classes.arrowRight} />
+            <Image
+              src={arrowRight}
+              className={classes.arrowRight}
+              alt="Right Arrow"
+            />
           </NavLink>
         </div>
       </div>
